@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Longhand Authors.
+// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
 
 import assert from "node:assert/strict";
 import { test } from "node:test";
@@ -44,7 +44,7 @@ shapes:
 
 function vault(): MemoryHost {
   return new MemoryHost({
-    "Novel/_Project.md": "---\nlonghand: 1\n---\n",
+    "Novel/_Project.md": "---\nnibwrite: 1\n---\n",
     "Novel/Maps/Harrowmere.md": MAP,
     "Novel/Research/Harrow Wood.md": '---\nid: "W"\ntype: "setting"\ntitle: "Harrow Wood"\n---\n',
   });

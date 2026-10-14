@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Longhand Authors.
+// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
 
 import esbuild from "esbuild";
 import process from "node:process";
@@ -17,7 +17,7 @@ const ctx = await esbuild.context({
   sourcemap: production ? false : "inline",
   treeShaking: true,
   outfile: "main.js",
-  banner: { js: "/* Longhand. Apache-2.0. Built from https://github.com/Longhand-io/longhand */" },
+  banner: { js: "/* Nibwrite. Apache-2.0. Built from https://github.com/nibwrite/nibwrite */" },
 });
 
 if (production) {

@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Longhand Authors.
+// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
 
 // The map model: everything the map does to a note, with no DOM. The view calls this;
 // the tests call this. Every change is one frontmatter write of `pins` and nothing else.

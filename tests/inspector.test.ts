@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Longhand Authors.
+// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
 
 import assert from "node:assert/strict";
 import { test } from "node:test";
@@ -33,7 +33,7 @@ test("splitNotes keeps prose that follows the callout", () => {
 test("L4.3-d1: the inspector reads title, kind, status, label, synopsis, notes, and words without the notes", async () => {
   const path = "Novel/Draft/02 The Tin.md";
   const host = new MemoryHost({
-    "Novel/_Project.md": '---\nlonghand: 1\n---\n',
+    "Novel/_Project.md": '---\nnibwrite: 1\n---\n',
     [path]: note({ id: "C2", type: "text", title: "The Tin", status: "First Draft", label: "Mara", synopsis: "Mara finds the tin." }, BODY),
     "Novel/Draft/03 Untitled-.md": note({ id: "C3", type: "text" }, "One two three.\n"),
     "Novel/People/Mara.md": note({ id: "M", type: "character", title: "Mara" }, "Her sister's keeper.\n"),

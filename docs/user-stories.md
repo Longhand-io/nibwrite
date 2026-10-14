@@ -1,6 +1,6 @@
 # User stories
 
-**Longhand** is the name of the whole project: the importer, the vault spec, and the Obsidian plugin family. Longhand means writing something out in full, by hand, and that is the promise: your whole manuscript, in full, in files you own. The importer binary is `scriv2obsidian` so people searching for exactly that find it.
+**Nibwrite** is the name of the whole project: the importer, the vault spec, and the Obsidian plugin family. Nibwrite means writing something out in full, by hand, and that is the promise: your whole manuscript, in full, in files you own. The importer binary is `scriv2obsidian` so people searching for exactly that find it.
 
 ## The one-line promise
 
@@ -36,9 +36,9 @@ All three share a constraint: they will not accept a tool that owns their data. 
 
 ## What Obsidian becomes
 
-Today Obsidian is a graph of notes. With Longhand it is a writing studio:
+Today Obsidian is a graph of notes. With Nibwrite it is a writing studio:
 
-| Obsidian without Longhand | Obsidian with Longhand |
+| Obsidian without Nibwrite | Obsidian with Nibwrite |
 |---|---|
 | File tree | Binder: ordered manuscript, drag to reorder, folder notes as chapters |
 | Properties panel | Inspector: synopsis, label, status, notes, keywords, bookmarks, and Snapshots tab |
@@ -55,7 +55,7 @@ Everything in the right column is stored as frontmatter, files, and git commits.
 
 ## One plugin, one settings page
 
-Longhand ships as a single plugin with modules. Each module has an on/off switch and its own section on the one settings page. A poet turns on snapshots and compile and nothing else. A novelist turns on everything. Nothing a module stores is private to it: corkboard, timeline, and binder all read the same `synopsis`, `label`, `date`, and order fields, so turning a module off never strands data.
+Nibwrite ships as a single plugin with modules. Each module has an on/off switch and its own section on the one settings page. A poet turns on snapshots and compile and nothing else. A novelist turns on everything. Nothing a module stores is private to it: corkboard, timeline, and binder all read the same `synopsis`, `label`, `date`, and order fields, so turning a module off never strands data.
 
 ## Non-goals
 

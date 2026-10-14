@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Longhand Authors.
+// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
 
 // The map module. Registers the map view and three commands: open the active map note as a
 // map, create a new map (blank canvas or from an image), and set a map's image.
@@ -9,7 +9,7 @@ import { safeName, uniquePath } from "../../core/naming.js";
 import { isImagePath, newMapNote } from "./model.js";
 import { mountMapView } from "./view.js";
 
-export const MAP_VIEW = "longhand-map";
+export const MAP_VIEW = "nibwrite-map";
 
 export const mapModule: Module = {
   id: "map",
@@ -69,7 +69,7 @@ export const mapModule: Module = {
       if (!title) return;
       const image = await host.pickFile("image", "Use an image, or press Escape for a blank canvas");
       if (image && !isImagePath(image)) {
-        host.notify(`${image} is not an image Longhand can draw.`);
+        host.notify(`${image} is not an image Nibwrite can draw.`);
         return;
       }
       const dir = folder !== undefined ? (folder === "" || folder === "/" ? "" : `${folder}/`) : await mapFolder(core);
@@ -98,7 +98,7 @@ export const mapModule: Module = {
         const image = await host.pickFile("image", "Image for this map");
         if (!image) return;
         if (!isImagePath(image)) {
-          host.notify(`${image} is not an image Longhand can draw.`);
+          host.notify(`${image} is not an image Nibwrite can draw.`);
           return;
         }
         await core.spec.setField(path, "image", host.linkTo(image, path));

@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Longhand Authors.
+// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
 
 // Nib's margin panel. A transcript, a few suggested questions drawn from the project, and
 // a question box. Answers are cards: a short reply and the scenes it cites, each a link.
@@ -12,10 +12,10 @@ import { ask, perform, projectsToOpen, scopeOf, type Answer, type Cite, type Sco
 import type { NibEvent, NibSession } from "./session.js";
 import { nudgesFor, type Nudge } from "./nudges.js";
 
-export const NIB_VIEW_TYPE = "longhand-nib";
+export const NIB_VIEW_TYPE = "nibwrite-nib";
 
 const NIB_MARK =
-  '<svg viewBox="0 0 100 100" aria-hidden="true"><polygon points="28,10 50,10 50,60 39,76 28,60" fill="currentColor"/><circle cx="39" cy="44" r="3.5" fill="var(--lh-paper)"/><line x1="39" y1="47" x2="39" y2="62" stroke="var(--lh-paper)" stroke-width="3"/><path d="M28 86 H 86" stroke="currentColor" stroke-width="9" stroke-linecap="round"/></svg>';
+  '<svg viewBox="0 0 100 100" aria-hidden="true"><polygon points="28,10 50,10 50,60 39,76 28,60" fill="currentColor"/><circle cx="39" cy="44" r="3.5" fill="var(--nw-paper)"/><line x1="39" y1="47" x2="39" y2="62" stroke="var(--nw-paper)" stroke-width="3"/><path d="M28 86 H 86" stroke="currentColor" stroke-width="9" stroke-linecap="round"/></svg>';
 
 /** The mark grown into a character: eyes above the breather hole, a badge, a scribble, a halo. */
 const NIB_CHARACTER =
@@ -161,7 +161,7 @@ export function mountNibView(core: Core, el: HTMLElement, session: NibSession, c
     try {
       answer = await ask(core, q, session);
     } catch (err) {
-      console.error("[longhand] nib", err);
+      console.error("[nibwrite] nib", err);
       answer = { kind: "help", text: "Something in the files would not read. The console has the detail.", cites: [] };
     }
     history.push({ you: q, answer });
@@ -195,7 +195,7 @@ export function mountNibView(core: Core, el: HTMLElement, session: NibSession, c
           try {
             said = await perform(core, action);
           } catch (err) {
-            console.error("[longhand] nib action", err);
+            console.error("[nibwrite] nib action", err);
             said = "That edit did not go through. The console has the detail.";
           }
           say(said);
@@ -468,7 +468,7 @@ export function mountNibDock(core: Core, el: HTMLElement, session: NibSession, i
     try {
       nudges = await nudgesFor(core, contextPath);
     } catch (err) {
-      console.error("[longhand] nib nudges", err);
+      console.error("[nibwrite] nib nudges", err);
     }
     if (generation !== lookGeneration) return; // a newer look is on its way
     const before = current?.key ?? null;

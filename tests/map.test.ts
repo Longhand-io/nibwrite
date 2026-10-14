@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Longhand Authors.
+// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
 
 import assert from "node:assert/strict";
 import { test } from "node:test";
@@ -25,7 +25,7 @@ Notes about the map.
 
 function vault(): MemoryHost {
   return new MemoryHost({
-    "Novel/_Project.md": "---\nlonghand: 1\n---\n",
+    "Novel/_Project.md": "---\nnibwrite: 1\n---\n",
     "Novel/Maps/Whitby.md": MAP,
     "Novel/Research/02 Map.png": "PNG",
     "Novel/Manuscript/02 The Tin.md": '---\nid: "C2"\n---\n',
@@ -129,7 +129,7 @@ test("module registers the view and three commands; open as map only when the ac
   const host = vault();
   const core = createCore(host);
   await mapModule.register(core);
-  assert.ok(host.views.has("longhand-map"));
+  assert.ok(host.views.has("nibwrite-map"));
   assert.equal(host.autoViews.length, 1);
   assert.equal(host.autoViews[0]!.when("Novel/Maps/Whitby.md", null), true);
   assert.equal(host.autoViews[0]!.when("Novel/Manuscript/02 The Tin.md", null), false);
@@ -145,7 +145,7 @@ test("module registers the view and three commands; open as map only when the ac
   host.active = "Novel/Maps/Whitby.md";
   assert.equal(host.commands.get("map-open")!.check!(), true);
   await host.commands.get("map-open")!.run();
-  assert.deepEqual(host.openedViews, [{ type: "longhand-map", state: { path: "Novel/Maps/Whitby.md" } }]);
+  assert.deepEqual(host.openedViews, [{ type: "nibwrite-map", state: { path: "Novel/Maps/Whitby.md" } }]);
 });
 
 test("new map command writes into the project's Maps folder and opens it", async () => {

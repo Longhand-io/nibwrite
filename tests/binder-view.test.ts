@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Longhand Authors.
+// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
 
 import assert from "node:assert/strict";
 import { test } from "node:test";
@@ -14,11 +14,11 @@ const doc = (id: string, type: string) => note({ id, type });
 
 function vault(): MemoryHost {
   return new MemoryHost({
-    "Novel/_Project.md": "---\nlonghand: 1\n---\n",
+    "Novel/_Project.md": "---\nnibwrite: 1\n---\n",
     "Novel/Draft/01 Part One/01 The Letter.md": doc("C1", "text"),
     "Novel/Draft/01 Part One/02 The Tin.md": doc("C2", "text"),
     "Novel/Draft/02 Part Two/01 Return.md": doc("C3", "text"),
-    "Other/_Project.md": "---\nlonghand: 1\n---\n",
+    "Other/_Project.md": "---\nnibwrite: 1\n---\n",
     "Other/Manuscript/01 Alpha.md": doc("O1", "text"),
   });
 }

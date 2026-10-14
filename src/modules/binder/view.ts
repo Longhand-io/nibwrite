@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Longhand Authors.
+// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
 
 // The binder view: the project as an ordered tree in the left sidebar. Folders are chapters
 // and carry the sum of their scenes' words; the active scene is marked; click opens; drag a
@@ -106,7 +106,7 @@ export function mountBinderView(core: Core, el: HTMLElement, actions: BinderActi
       w.textContent = formatCount(node.words);
       meta.appendChild(w);
     }
-    if (node.label) name.prepend(labelDot("var(--lh-graphite)", node.label));
+    if (node.label) name.prepend(labelDot("var(--nw-graphite)", node.label));
     const add = node.kind === "folder" ? addButton(`New… in ${node.name}`, node.path) : addButton(`New… beside ${node.name}`, dirOf(node.path));
     line.append(twisty, name, meta, add);
     const open = () => {
@@ -154,7 +154,7 @@ export function mountBinderView(core: Core, el: HTMLElement, actions: BinderActi
       try {
         await applyMove(core, move);
       } catch (err) {
-        console.error("[longhand] binder move", err);
+        console.error("[nibwrite] binder move", err);
         core.host.notify("That move did not go through. The console has the detail.");
       } finally {
         writing = false;

@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Longhand Authors.
+// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
 
 // Small DOM pieces every panel uses: a button, a chip, a thread's colour dot, and the
-// press-or-drag state machine behind every pin. Plain DOM; the classes are Longhand's own,
+// press-or-drag state machine behind every pin. Plain DOM; the classes are Nibwrite's own,
 // styled once in styles.css, so no module borrows another module's class names.
 
 /** A plain button in the panel style; `active` toggles the pressed look. */

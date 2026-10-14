@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Longhand Authors.
+// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
 
 // One conversation with Nib per session, shared by the corner character and the sidebar: the
 // turns so far, the nudges already spoken, whether the joke was told, and the events the

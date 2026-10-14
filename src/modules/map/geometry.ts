@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Longhand Authors.
+// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
 
 // Small geometry helpers for the drawing layer. Points are [x, y] pairs in whatever
 // space the caller uses; nothing here knows about fractions or pixels.

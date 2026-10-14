@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Longhand Authors.
+// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
 
 // The Obsidian host. The only place outside this folder's siblings that imports `obsidian`.
 
@@ -225,7 +225,7 @@ export class ObsidianHost implements Host {
       try {
         slot.handle = overlay.mount(el);
       } catch (err) {
-        console.error("[longhand] overlay", overlay.id, err);
+        console.error("[nibwrite] overlay", overlay.id, err);
       }
     });
   }
@@ -325,7 +325,7 @@ class HostView extends ItemView {
   }
 
   override getDisplayText(): string {
-    return this.state.path ? this.factory.title(this.state) : "Longhand";
+    return this.state.path ? this.factory.title(this.state) : "Nibwrite";
   }
 
   override getIcon(): string {

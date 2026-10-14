@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Longhand Authors.
+// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
 
 // Snapshots, the first piece: take one. A command and a file-menu entry that copy the note
 // as it is on disk into the project's snapshot store under a title. The inspector lists them.

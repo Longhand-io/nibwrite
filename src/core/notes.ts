@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Longhand Authors.
+// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
 
 // Document notes. Scrivener keeps a notes pane beside each document; in the vault they are a
 // callout titled Notes inside the note itself, so they travel with the text and need no

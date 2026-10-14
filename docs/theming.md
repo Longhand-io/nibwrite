@@ -1,12 +1,12 @@
 # Themes and templates
 
-Longhand is meant to be built on. Two things are open formats from day one: themes, which change how every Longhand panel looks, and project templates, which change what a new project starts with. Both are folders of plain files, both are shareable, and both may be sold by whoever makes them.
+Nibwrite is meant to be built on. Two things are open formats from day one: themes, which change how every Nibwrite panel looks, and project templates, which change what a new project starts with. Both are folders of plain files, both are shareable, and both may be sold by whoever makes them.
 
-## How Longhand is styled
+## How Nibwrite is styled
 
-Every Longhand panel, the compare view, the binder, the inspector, the corkboard, the cast panel, the maps, and Nib's margin, is drawn from one set of CSS custom properties with the `--lh-` prefix. Nothing is hard-coded. The core ships the default set, which is the paper-and-ink palette on this site, and a theme overrides some or all of it.
+Every Nibwrite panel, the compare view, the binder, the inspector, the corkboard, the cast panel, the maps, and Nib's margin, is drawn from one set of CSS custom properties with the `--nw-` prefix. Nothing is hard-coded. The core ships the default set, which is the paper-and-ink palette on this site, and a theme overrides some or all of it.
 
-Longhand themes sit on top of Obsidian themes, not instead of them. An Obsidian theme still styles the editor, the file explorer, and the app chrome. A Longhand theme styles Longhand's panels and can read Obsidian's own variables so the two agree.
+Nibwrite themes sit on top of Obsidian themes, not instead of them. An Obsidian theme still styles the editor, the file explorer, and the app chrome. A Nibwrite theme styles Nibwrite's panels and can read Obsidian's own variables so the two agree.
 
 ## A theme is a folder
 
@@ -24,7 +24,7 @@ my-theme/
   "name": "Typewriter",
   "author": "someone",
   "version": "1.0.0",
-  "longhand": 1,
+  "nibwrite": 1,
   "tokens": {
     "paper": "#F6F3EA",
     "ink": "#2A2622",
@@ -46,34 +46,34 @@ my-theme/
 }
 ```
 
-Every key in `tokens` becomes `--lh-<key>` on the Longhand root element. Unknown keys are set anyway, so a theme can define tokens for a module that does not exist yet. Missing keys fall back to the default theme. `longhand: 1` is the theme format version; readers accept older versions.
+Every key in `tokens` becomes `--nw-<key>` on the Nibwrite root element. Unknown keys are set anyway, so a theme can define tokens for a module that does not exist yet. Missing keys fall back to the default theme. `nibwrite: 1` is the theme format version; readers accept older versions.
 
-`theme.css` is loaded after the tokens and scoped to Longhand's panels by the core, so a theme cannot restyle the rest of Obsidian by accident. Selectors are stable and documented per module; a class name that starts with `lh-` is public API and will not change without a format version bump.
+`theme.css` is loaded after the tokens and scoped to Nibwrite's panels by the core, so a theme cannot restyle the rest of Obsidian by accident. Selectors are stable and documented per module; a class name that starts with `lh-` is public API and will not change without a format version bump.
 
-Themes install by dropping the folder into `.longhand/themes/` in the vault, or through the theme picker in settings, which reads a community list. There is no build step.
+Themes install by dropping the folder into `.nibwrite/themes/` in the vault, or through the theme picker in settings, which reads a community list. There is no build step.
 
 ## A project template is a folder
 
-A template is a starting project: the folders, the `_Project.md` with labels and statuses filled in, a few starter notes, and a compile preset if one belongs with it. Longhand ships with novel, short fiction, poetry, essay, screenplay, and recipe collection, which are the shapes that came across from Scrivener. Anyone can add another by making a folder that follows the spec and adding `template.json`:
+A template is a starting project: the folders, the `_Project.md` with labels and statuses filled in, a few starter notes, and a compile preset if one belongs with it. Nibwrite ships with novel, short fiction, poetry, essay, screenplay, and recipe collection, which are the shapes that came across from Scrivener. Anyone can add another by making a folder that follows the spec and adding `template.json`:
 
 ```json
 {
   "name": "Sermon series",
   "author": "someone",
   "version": "1.0.0",
-  "longhand": 1,
+  "nibwrite": 1,
   "description": "One project per series, one scene per sermon, scripture references as footnotes."
 }
 ```
 
-Templates install to `.longhand/templates/`. Creating a project from one copies the folder, assigns fresh `id` values, and stamps the date. Nothing in a template is special after that; it is an ordinary project.
+Templates install to `.nibwrite/templates/`. Creating a project from one copies the folder, assigns fresh `id` values, and stamps the date. Nothing in a template is special after that; it is an ordinary project.
 
 ## Sharing and selling
 
-Themes and templates are yours. Publish them on GitHub, sell them on your own site, or list them in the community gallery when it exists. Longhand will not take a cut of anything sold outside its own store, and it will never require a theme or template to be approved before it works. If a store with revenue sharing ships later, it will be optional.
+Themes and templates are yours. Publish them on GitHub, sell them on your own site, or list them in the community gallery when it exists. Nibwrite will not take a cut of anything sold outside its own store, and it will never require a theme or template to be approved before it works. If a store with revenue sharing ships later, it will be optional.
 
 ## What themes cannot do
 
 - Run code. `theme.css` is CSS; there is no script hook, so a theme cannot read your vault or call the network.
-- Reach outside Longhand's panels.
+- Reach outside Nibwrite's panels.
 - Change what is stored. Themes are presentation only; the spec is untouched.

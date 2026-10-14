@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Longhand Authors.
+// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
 
 // The project switcher every project-level panel shares. It renders the registry's current
 // project and hands a pick back to the registry; the rule for which project is current lives

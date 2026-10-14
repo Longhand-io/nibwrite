@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Longhand Authors.
+// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
 
 // Snapshots in the files store: one full copy of a document per snapshot, under the
 // project's _snapshots folder, in a folder named by the document's id so the copies follow

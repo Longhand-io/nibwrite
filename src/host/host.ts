@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Longhand Authors.
+// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
 
 // The host interface. Modules and the core are written against this and nothing else;
 // src/host/obsidian implements it on the Obsidian API, src/host/memory.ts in memory for
-// tests. A standalone Longhand application would implement it too.
+// tests. A standalone Nibwrite application would implement it too.
 
 export type FileChangeKind = "create" | "modify" | "delete" | "rename";
 

@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Longhand Authors.
+// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
 
 // The timeline view. A ruler, one track per thread, pins as tags in the thread's colour,
 // events dashed, ranges as bars, a Written track of dots from `created`, and a tray of
@@ -509,7 +509,7 @@ export function mountTimelineView(core: Core, el: HTMLElement, anchorPath: strin
 const LANE_COLORS = ["red", "blue", "green", "yellow", "sea", "moss", "graphite", "ink"];
 
 export function laneColor(index: number): string {
-  return `var(--lh-color-${LANE_COLORS[index % LANE_COLORS.length]})`;
+  return `var(--nw-color-${LANE_COLORS[index % LANE_COLORS.length]})`;
 }
 
 /** An element carrying a thread's colour dot and a name. */

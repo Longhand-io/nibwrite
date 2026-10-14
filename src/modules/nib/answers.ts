@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Longhand Authors.
+// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
 
 // Nib's retrieval answers: the questions that need lookup, not reading. Everything here is
 // computed from the files through the core, with no model and no network. The hosted Nib

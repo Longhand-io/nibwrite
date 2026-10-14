@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Longhand Authors.
+// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
 
 import assert from "node:assert/strict";
 import { test } from "node:test";
@@ -9,7 +9,7 @@ import { MemoryHost } from "../src/host/memory.js";
 
 function vault(settingExtra = ""): MemoryHost {
   return new MemoryHost({
-    "Novel/_Project.md": "---\nlonghand: 1\n---\n",
+    "Novel/_Project.md": "---\nnibwrite: 1\n---\n",
     "Novel/Research/Stillwater.md": `---\nid: "S1"\ntype: "setting"\ntitle: "Stillwater"\naliases: ["the crossing"]\nattachments: ["[[Ford.png]]", "[[Ferry notes]]"]\n${settingExtra}---\nA ford below the mountains.\n`,
     "Novel/Research/Ford.png": "PNG",
     "Novel/Research/Ferry notes.md": '---\nid: "R2"\ntype: "text"\n---\nThe ferry ran until 1900.\n',

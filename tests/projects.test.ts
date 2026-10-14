@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Longhand Authors.
+// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
 
 import assert from "node:assert/strict";
 import { test } from "node:test";
@@ -13,7 +13,7 @@ const doc = (id: string, extra: { [k: string]: string | number } = {}) => note({
 // The same shape the importer writes for the synthetic fixture, plus a second project.
 function fixtureVault(): MemoryHost {
   return new MemoryHost({
-    "Fixture Novel/_Project.md": '---\nlonghand: 1\ntitle: "Fixture Novel"\n---\n',
+    "Fixture Novel/_Project.md": '---\nnibwrite: 1\ntitle: "Fixture Novel"\n---\n',
     "Fixture Novel/Manuscript/01 Part One/01 Part One.md": doc("P1"),
     "Fixture Novel/Manuscript/01 Part One/01 The Letter- A Beginning-.md": doc("C1"),
     "Fixture Novel/Manuscript/01 Part One/02 The Tin.md": doc("C2"),
@@ -23,7 +23,7 @@ function fixtureVault(): MemoryHost {
     "Fixture Novel/Research/02 Map notes.md": doc("N1"),
     "Fixture Novel/_snapshots/C1/2020-01-20T04-27-36Z First Draft.md": doc("C1"),
     "Fixture Novel/.scriv2obsidian.json": "{}",
-    "Other/_Project.md": '---\nlonghand: 1\n---\n',
+    "Other/_Project.md": '---\nnibwrite: 1\n---\n',
     "Other/Manuscript/Beta.md": doc("O2", { order: 2 }),
     "Other/Manuscript/Alpha.md": doc("O1", { order: 1 }),
     "Other/Manuscript/Gamma.md": doc("O3", { order: 3 }),
@@ -69,8 +69,17 @@ test("resolves id to path and back, and drops the cache on change", async () => 
   assert.equal((await core.projects.byId("NEW"))?.path, "Fixture Novel/Manuscript/02 Part Two/01 New.md");
 });
 
+test("reads the pre-rename longhand field as the spec version", async () => {
+  const host = new MemoryHost({ "Old/_Project.md": '---\nlonghand: 1\ntitle: "Old"\n---\n', "Old/Manuscript/A.md": doc("A") });
+  const core = createCore(host);
+  const roots = await core.projects.roots();
+  assert.equal(roots.length, 1);
+  assert.equal(roots[0]?.version, 1);
+  assert.equal(host.notices.length, 0);
+});
+
 test("warns once when a project note declares a newer spec", async () => {
-  const host = new MemoryHost({ "Future/_Project.md": "---\nlonghand: 2\n---\n" });
+  const host = new MemoryHost({ "Future/_Project.md": "---\nnibwrite: 2\n---\n" });
   const core = createCore(host);
   await core.projects.roots();
   await core.projects.roots();
@@ -78,7 +87,7 @@ test("warns once when a project note declares a newer spec", async () => {
   assert.ok(host.notices[0]?.includes("spec 2"));
 });
 
-const PROJECT = '---\nlonghand: 1\ntitle: "Novel"\n---\n';
+const PROJECT = '---\nnibwrite: 1\ntitle: "Novel"\n---\n';
 
 /** A host that runs `during` once, in the middle of its next read: a change that lands while the registry is reading. */
 class InterruptingHost extends MemoryHost {

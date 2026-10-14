@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Longhand Authors.
+// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
 
 // Folding a crowded track. Pins pack into rows left to right; a crowd that would stack deeper
 // than the track allows folds into one chip per period, month first and then year, so a heavy

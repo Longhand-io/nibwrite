@@ -2,8 +2,8 @@
 
 Two different problems that are easy to conflate.
 
-- **Sync** moves your vault between devices. Longhand does not do this. Whatever you use today keeps working.
-- **History** remembers earlier versions of a document so you can compare and restore. Longhand does this, through a pluggable store.
+- **Sync** moves your vault between devices. Nibwrite does not do this. Whatever you use today keeps working.
+- **History** remembers earlier versions of a document so you can compare and restore. Nibwrite does this, through a pluggable store.
 
 ## History stores
 
@@ -22,7 +22,7 @@ Why files by default: Scrivener's own snapshots are files inside the project, an
 
 | Sync | Vault files | `files` history | `git` history | Notes |
 |---|---|---|---|---|
-| iCloud Drive | yes | yes | desktop only, repo kept outside iCloud | The plugin initialises git with a separate git directory under `~/Library/Application Support/Longhand/repos/`, so iCloud never sees `.git`. A one-line `.git` file in the vault points at it. |
+| iCloud Drive | yes | yes | desktop only, repo kept outside iCloud | The plugin initialises git with a separate git directory under `~/Library/Application Support/Nibwrite/repos/`, so iCloud never sees `.git`. A one-line `.git` file in the vault points at it. |
 | Dropbox | yes | yes | desktop only, repo kept outside Dropbox | Same separate-git-dir arrangement. |
 | Obsidian Sync | yes | yes | desktop only, independent repo per desktop | Obsidian Sync does not sync hidden folders, so `.git` never crosses devices. Each desktop keeps its own history unless you add a remote. |
 | Syncthing | yes | yes | desktop only, exclude `.git` | The plugin writes a `.stignore` line if it finds one. |

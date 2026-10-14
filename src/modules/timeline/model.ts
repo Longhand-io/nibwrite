@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Longhand Authors.
+// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
 
 // The timeline's data: every note in a project with a story date, laid on one axis and
 // grouped into threads by label; events dashed; a second track for when each scene was
