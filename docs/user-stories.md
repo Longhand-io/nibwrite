@@ -31,7 +31,7 @@ All three share a constraint: they will not accept a tool that owns their data. 
 - **Planning.** Switches the panel to corkboard and arranges by label, the way Scrivener does it: one thread per point-of-view character, the chapter's scenes down the axis in manuscript order. Drags a card up and the scene moves earlier in the book; drags it sideways and its label changes. Switches the axis to story date and the same threads become a timeline, with a second track for when each scene was written.
 - **Research.** The research pane shows the PDFs, images, and notes attached to this scene. Opens a PDF in Obsidian's viewer, highlights, and the highlight links back into the scene. If they use Zotero, the annotations pull in.
 - **Submission.** Runs compile. Picks "Short story, Shunn manuscript". Gets a docx with the right front matter, headers, and scene breaks. The Markdown is untouched.
-- **Anywhere else.** On the phone via iCloud, the same files open in Obsidian mobile. Snapshots are desktop-only, but nothing is hidden.
+- **Anywhere else.** On the phone via iCloud, the same files open in Obsidian mobile. Snapshots work there too through the files store; only git history and the relief map are desktop-only.
 - **With an AI.** Points Claude Code or any agent at the vault folder. It reads plain Markdown, sees the git history, and can be asked "what changed in chapter four since the June draft."
 
 ## What Obsidian becomes
