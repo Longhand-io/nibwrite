@@ -1,6 +1,6 @@
 # Trademarks
 
-The Apache License on this code does not grant rights to the Oakfall name, the Nib name, the cursive-ℓ mark, the nib mark, or the wordmarks. Those are trademarks of 0xSpectra LLC and identify the project and the products that fund it.
+The Apache License on this code does not grant rights to the Oakfall name, the Gall name, the cursive-ℓ mark, the nib mark, or the wordmarks. Those are trademarks of 0xSpectra LLC and identify the project and the products that fund it.
 
 You may:
 
@@ -10,8 +10,8 @@ You may:
 
 You may not:
 
-- Name a fork, a product, a service, or a company "Oakfall", "Nib", or something confusingly close, or use the marks as your own.
-- Sell anything that presents itself as Oakfall or Nib.
+- Name a fork, a product, a service, or a company "Oakfall", "Gall", or something confusingly close, or use the marks as your own.
+- Sell anything that presents itself as Oakfall or Gall.
 - Modify the marks or combine them with other marks.
 
 If you fork the code, rename it. The code is yours under Apache-2.0; the name is not.

@@ -5,10 +5,10 @@ import assert from "node:assert/strict";
 import { test } from "node:test";
 import { createCore } from "../src/core/modules.js";
 import { MemoryHost } from "../src/host/memory.js";
-import { ask, findNote, perform, scopeOf, words } from "../src/modules/nib/answers.js";
-import { NibSession } from "../src/modules/nib/session.js";
-import { nibModule } from "../src/modules/nib/index.js";
-import { suggest } from "../src/modules/nib/view.js";
+import { ask, findNote, perform, scopeOf, words } from "../src/modules/gall/answers.js";
+import { GallSession } from "../src/modules/gall/session.js";
+import { gallModule } from "../src/modules/gall/index.js";
+import { suggest } from "../src/modules/gall/view.js";
 
 function vault(): MemoryHost {
   return new MemoryHost({
@@ -86,36 +86,36 @@ test("on the map: pins and shapes that link to the note", async () => {
 
 test("anything else gets the help card, and the joke exactly once", async () => {
   const core = createCore(vault());
-  const session = new NibSession();
+  const session = new GallSession();
   const first = await ask(core, "write me a better opening", session);
   assert.equal(first.kind, "help");
   assert.match(first.text, /That was the one joke/);
   assert.equal(first.joke, true);
   const second = await ask(core, "and another", session);
   assert.doesNotMatch(second.text, /joke/);
-  assert.match(second.text, /hosted Nib, which is off/);
+  assert.match(second.text, /hosted Gall, which is off/);
 });
 
-test("module is off by default and registers a right-hand view and the Ask Nib command", async () => {
+test("module is off by default and registers a right-hand view and the Ask Gall command", async () => {
   const host = vault();
   const core = createCore(host);
-  assert.equal(nibModule.defaultEnabled, false);
-  await nibModule.register(core);
-  assert.equal(host.views.get("oakfall-nib")?.placement, "right");
-  assert.ok(host.commands.has("nib-ask"));
+  assert.equal(gallModule.defaultEnabled, false);
+  await gallModule.register(core);
+  assert.equal(host.views.get("oakfall-gall")?.placement, "right");
+  assert.ok(host.commands.has("gall-ask"));
   assert.equal(host.overlays.length, 1);
-  assert.equal(host.overlays[0]?.id, "nib");
-  await nibModule.unregister?.();
+  assert.equal(host.overlays[0]?.id, "gall");
+  await gallModule.unregister?.();
   assert.equal(host.overlays.length, 0);
 });
 
-test("a question from the corner opens the sidebar with the context, carrying what Nib said", async () => {
+test("a question from the corner opens the sidebar with the context, carrying what Gall said", async () => {
   const host = vault();
   const core = createCore(host);
-  const session = new NibSession();
-  await session.askInSidebar(core, "oakfall-nib", "Which places have no scene?", "Novel/Maps/Harrowmere.md", "Harrow Wood is on this map but no scene is set there yet.");
+  const session = new GallSession();
+  await session.askInSidebar(core, "oakfall-gall", "Which places have no scene?", "Novel/Maps/Harrowmere.md", "Harrow Wood is on this map but no scene is set there yet.");
   assert.deepEqual(session.pending, { question: "Which places have no scene?", preface: "Harrow Wood is on this map but no scene is set there yet." });
-  assert.deepEqual(host.openedViews, [{ type: "oakfall-nib", state: { path: "Novel/Maps/Harrowmere.md" } }]);
+  assert.deepEqual(host.openedViews, [{ type: "oakfall-gall", state: { path: "Novel/Maps/Harrowmere.md" } }]);
 });
 
 test("scope follows the active note: a project, the whole vault, or nothing open", async () => {

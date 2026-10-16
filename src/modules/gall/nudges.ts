@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: Apache-2.0
 // Copyright 2026 0xSpectra LLC and the Oakfall Authors.
 
-// What Nib notices on its own. The lesson from the Office Assistant: speak only on a strong
+// What Gall notices on its own. The lesson from the Office Assistant: speak only on a strong
 // signal, say something specific and true, say it once, and be easy to dismiss. Every nudge
 // here is computed from the files for the view on screen; nothing is guessed.
 

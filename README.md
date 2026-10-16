@@ -100,15 +100,15 @@ Three things are paid, and none of them can hold your files:
 
 | Paid | How |
 |---|---|
-| Nib, the assistant | Monthly subscription with hosted models, or a cheaper licence with your own key or a local model |
+| Gall, the assistant | Monthly subscription with hosted models, or a cheaper licence with your own key or a local model |
 | Compile presets | Manuscript formats to docx, pdf, epub. One-time licence |
 | Relief maps | The world in three dimensions. One-time licence |
 
 Turn a paid module off and nothing in your vault changes. There is no field that only a paid module can read.
 
-## Nib
+## Gall
 
-Nib is the assistant: it lives in the margin, knows the manuscript through the spec and the history store, and stays out of your prose. Ask it what changed since a snapshot, where a character was last seen, or what depends on a passage you are about to cut. Everything it does lands as an ordinary edit or snapshot you can undo. It is off until you turn it on, and it sends your text nowhere you did not point it. Design notes in [Architecture](docs/architecture.md).
+Gall is the assistant: it lives in the margin, knows the manuscript through the spec and the history store, and stays out of your prose. Ask it what changed since a snapshot, where a character was last seen, or what depends on a passage you are about to cut. Everything it does lands as an ordinary edit or snapshot you can undo. It is off until you turn it on, and it sends your text nowhere you did not point it. Design notes in [Architecture](docs/architecture.md).
 
 ## Repositories
 
@@ -128,4 +128,4 @@ Nib is the assistant: it lives in the margin, knows the manuscript through the s
 
 Oakfall is an independent project. It is not affiliated with or endorsed by Literature & Latte, the makers of Scrivener, or by Obsidian; those names are trademarks of their respective owners.
 
-Apache License 2.0 for everything in this repository, copyright 0xSpectra LLC and the Oakfall Authors; see [NOTICE](NOTICE). The names and marks are not part of the licence; see [TRADEMARKS.md](TRADEMARKS.md). Nib, compile presets, and relief maps are paid and live outside it; nothing that guards your data ever will be.
+Apache License 2.0 for everything in this repository, copyright 0xSpectra LLC and the Oakfall Authors; see [NOTICE](NOTICE). The names and marks are not part of the licence; see [TRADEMARKS.md](TRADEMARKS.md). Gall, compile presets, and relief maps are paid and live outside it; nothing that guards your data ever will be.

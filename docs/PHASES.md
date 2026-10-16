@@ -31,7 +31,7 @@ phases:
         title: Brand and site
         status: done
         deliverables:
-          - { id: L0.3-d1, done: true, desc: "oakfall-site: mark, Nib, palette, type, voice; landing page with a panel per module, live relief map, place cards, cast panel" }
+          - { id: L0.3-d1, done: true, desc: "oakfall-site: mark, Gall, palette, type, voice; landing page with a panel per module, live relief map, place cards, cast panel" }
         acceptance:
           - { id: L0.3-a1, met: true, check: "site builds on GitHub Pages; each panel screenshotted in a browser", method: manual }
 
@@ -208,20 +208,20 @@ phases:
         acceptance:
           - { id: L7.2-a1, met: false, check: "in the test vault, hover the Stillwater crossing pin: two scenes listed with the mention highlighted, one image in the strip; edit a scene to add a link and the card updates without reopening the map", method: manual }
   - id: N0
-    title: Nib panel with retrieval answers
-    program: nib
+    title: Gall panel with retrieval answers
+    program: gall
     status: in_progress
     depends_on: [L2]
-    note: "The open half of Nib: the panel and every answer that needs lookup rather than reading. No model, no network. Lives in this repo; the hosted half gets its own ledger."
+    note: "The open half of Gall: the panel and every answer that needs lookup rather than reading. No model, no network. Lives in this repo; the hosted half gets its own ledger."
     subphases:
       - id: N0.1
         title: Panel and lookup answers
         status: in_progress
         deliverables:
-          - { id: N0.1-d1, done: true, desc: "right-sidebar view with transcript, suggested questions from the project, question box; answers for last seen, set at, who is in, unused places and characters, length, on the map; every answer cites and opens its scenes; off by default", note: "2026-09-16: src/modules/nib; tests/nib.test.ts covers every answer kind and the one joke" }
-          - { id: N0.1-d2, done: true, desc: "the character: a corner nib on every Oakfall view that idles, badges when it has noticed something, speaks it once in a bubble with a follow-up and a question box, and hands the conversation to the sidebar; nudges computed from the files for the view on screen", note: "2026-09-16: src/modules/nib/nudges.ts, tests/nudges.test.ts; modelled on what worked in the Office Assistant and not on what did not: strong signals only, said once, dismissible, never covering the work" }
+          - { id: N0.1-d1, done: true, desc: "right-sidebar view with transcript, suggested questions from the project, question box; answers for last seen, set at, who is in, unused places and characters, length, on the map; every answer cites and opens its scenes; off by default", note: "2026-09-16: src/modules/gall; tests/gall.test.ts covers every answer kind and the one joke" }
+          - { id: N0.1-d2, done: true, desc: "the character: a corner nib on every Oakfall view that idles, badges when it has noticed something, speaks it once in a bubble with a follow-up and a question box, and hands the conversation to the sidebar; nudges computed from the files for the view on screen", note: "2026-09-16: src/modules/gall/nudges.ts, tests/nudges.test.ts; modelled on what worked in the Office Assistant and not on what did not: strong signals only, said once, dismissible, never covering the work" }
         acceptance:
-          - { id: N0.1-a1, met: false, check: "in the test vault, turn Nib on, ask where Mara was last seen and where Stillwater is on the map; both answers cite the right notes and open them", method: manual }
+          - { id: N0.1-a1, met: false, check: "in the test vault, turn Gall on, ask where Mara was last seen and where Stillwater is on the map; both answers cite the right notes and open them", method: manual }
   - id: L8
     title: Themes and templates
     program: themes-and-templates

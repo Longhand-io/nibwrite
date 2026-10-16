@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: Apache-2.0
 // Copyright 2026 0xSpectra LLC and the Oakfall Authors.
 
-// Nib's margin panel. A transcript, a few suggested questions drawn from the project, and
+// Gall's margin panel. A transcript, a few suggested questions drawn from the project, and
 // a question box. Answers are cards: a short reply and the scenes it cites, each a link.
 
 import type { Core } from "../../core/modules.js";
@@ -9,10 +9,10 @@ import type { ViewHandle } from "../../host/host.js";
 import { chip } from "../../core/dom.js";
 import { projectPicker } from "../../core/picker.js";
 import { ask, perform, projectsToOpen, scopeOf, type Answer, type Cite, type Scope } from "./answers.js";
-import type { NibEvent, NibSession } from "./session.js";
+import type { GallEvent, GallSession } from "./session.js";
 import { nudgesFor, type Nudge } from "./nudges.js";
 
-export const NIB_VIEW_TYPE = "oakfall-nib";
+export const GALL_VIEW_TYPE = "oakfall-gall";
 
 const NIB_MARK =
   '<svg viewBox="0 0 100 100" aria-hidden="true"><polygon points="28,10 50,10 50,60 39,76 28,60" fill="currentColor"/><circle cx="39" cy="44" r="3.5" fill="var(--oak-paper)"/><line x1="39" y1="47" x2="39" y2="62" stroke="var(--oak-paper)" stroke-width="3"/><path d="M28 86 H 86" stroke="currentColor" stroke-width="9" stroke-linecap="round"/></svg>';
@@ -39,7 +39,7 @@ const NIB_CHARACTER =
   '</g></svg>';
 
 const STATES = ["idle", "noticed", "thinking", "found", "notnow", "doubletake", "joke"] as const;
-type NibState = (typeof STATES)[number];
+type GallState = (typeof STATES)[number];
 
 /** One clickable row for a cited note, shared by the sidebar's answers and the corner bubble. */
 function citeRow(core: Core, c: Cite): HTMLElement {
@@ -47,12 +47,12 @@ function citeRow(core: Core, c: Cite): HTMLElement {
   li.tabIndex = 0;
   li.setAttribute("role", "link");
   const label = document.createElement("span");
-  label.className = "lh-nib-cite-label";
+  label.className = "lh-gall-cite-label";
   label.textContent = `Open ${c.label}`;
   li.appendChild(label);
   if (c.detail) {
     const d = document.createElement("span");
-    d.className = "lh-nib-cite-detail";
+    d.className = "lh-gall-cite-detail";
     d.textContent = c.detail;
     li.appendChild(d);
   }
@@ -64,10 +64,10 @@ function citeRow(core: Core, c: Cite): HTMLElement {
   return li;
 }
 
-/** An answer card with one line of Nib's. */
-function nibCard(text: string): HTMLElement {
+/** An answer card with one line of Gall's. */
+function gallCard(text: string): HTMLElement {
   const card = document.createElement("div");
-  card.className = "lh-nib-answer";
+  card.className = "lh-gall-answer";
   const p = document.createElement("p");
   p.textContent = text;
   card.appendChild(p);
@@ -75,39 +75,39 @@ function nibCard(text: string): HTMLElement {
 }
 
 
-export function mountNibView(core: Core, el: HTMLElement, session: NibSession, contextPath = ""): ViewHandle {
+export function mountGallView(core: Core, el: HTMLElement, session: GallSession, contextPath = ""): ViewHandle {
   const { history } = session;
   const root = document.createElement("div");
-  root.className = "lh-root lh-nib";
+  root.className = "lh-root lh-gall";
   el.appendChild(root);
 
   const head = document.createElement("div");
-  head.className = "lh-nib-head";
-  head.innerHTML = `<span class="lh-nib-mark">${NIB_MARK}</span>`;
+  head.className = "lh-gall-head";
+  head.innerHTML = `<span class="lh-gall-mark">${NIB_MARK}</span>`;
   const title = document.createElement("div");
-  title.className = "lh-nib-titles";
-  title.innerHTML = `<div class="lh-nib-title">Nib</div>`;
+  title.className = "lh-gall-titles";
+  title.innerHTML = `<div class="lh-gall-title">Gall</div>`;
   const sub = document.createElement("div");
-  sub.className = "lh-nib-sub";
+  sub.className = "lh-gall-sub";
   sub.textContent = "Answers from your files. Off the network.";
   title.appendChild(sub);
   head.appendChild(title);
-  // which project Nib looks at; follows the note you open, or your pick here
+  // which project Gall looks at; follows the note you open, or your pick here
   const picker = projectPicker(core, () => {
     void renderChips();
     void updateScopeLine();
   });
-  picker.el.classList.add("lh-nib-picker");
+  picker.el.classList.add("lh-gall-picker");
   head.appendChild(picker.el);
 
   const transcript = document.createElement("div");
-  transcript.className = "lh-nib-transcript";
+  transcript.className = "lh-gall-transcript";
 
   const chips = document.createElement("div");
-  chips.className = "lh-nib-chips";
+  chips.className = "lh-gall-chips";
   const chipsToggle = document.createElement("button");
   chipsToggle.type = "button";
-  chipsToggle.className = "lh-nib-chips-toggle";
+  chipsToggle.className = "lh-gall-chips-toggle";
   chipsToggle.textContent = "Suggestions";
   chipsToggle.hidden = true;
   chipsToggle.addEventListener("click", () => {
@@ -115,11 +115,11 @@ export function mountNibView(core: Core, el: HTMLElement, session: NibSession, c
   });
 
   const form = document.createElement("form");
-  form.className = "lh-nib-form";
+  form.className = "lh-gall-form";
   const input = document.createElement("input");
   input.type = "text";
-  input.placeholder = "Ask Nib";
-  input.setAttribute("aria-label", "Ask Nib");
+  input.placeholder = "Ask Gall";
+  input.setAttribute("aria-label", "Ask Gall");
   const send = document.createElement("button");
   send.type = "submit";
   send.textContent = "Ask";
@@ -134,14 +134,14 @@ export function mountNibView(core: Core, el: HTMLElement, session: NibSession, c
 
   const youLine = (q: string) => {
     const you = document.createElement("div");
-    you.className = "lh-nib-you";
+    you.className = "lh-gall-you";
     you.textContent = q;
     transcript.appendChild(you);
   };
 
   const say = (text: string) => {
-    history.push({ nib: text });
-    transcript.appendChild(nibCard(text));
+    history.push({ gall: text });
+    transcript.appendChild(gallCard(text));
     transcript.scrollTop = transcript.scrollHeight;
   };
 
@@ -152,7 +152,7 @@ export function mountNibView(core: Core, el: HTMLElement, session: NibSession, c
     stepAside();
     youLine(q);
     const card = document.createElement("div");
-    card.className = "lh-nib-answer lh-nib-thinking";
+    card.className = "lh-gall-answer lh-gall-thinking";
     card.textContent = "Looking…";
     transcript.appendChild(card);
     transcript.scrollTop = transcript.scrollHeight;
@@ -161,12 +161,12 @@ export function mountNibView(core: Core, el: HTMLElement, session: NibSession, c
     try {
       answer = await ask(core, q, session);
     } catch (err) {
-      console.error("[oakfall] nib", err);
+      console.error("[oakfall] gall", err);
       answer = { kind: "help", text: "Something in the files would not read. The console has the detail.", cites: [] };
     }
     history.push({ you: q, answer });
     session.emit(answer.joke ? "joke" : "answered");
-    card.classList.remove("lh-nib-thinking");
+    card.classList.remove("lh-gall-thinking");
     renderAnswer(card, answer);
     transcript.scrollTop = transcript.scrollHeight;
   };
@@ -180,22 +180,22 @@ export function mountNibView(core: Core, el: HTMLElement, session: NibSession, c
     }
     if (a.cites.length) {
       const list = document.createElement("ul");
-      list.className = "lh-nib-cites";
+      list.className = "lh-gall-cites";
       for (const c of a.cites) list.appendChild(citeRow(core, c));
       card.appendChild(list);
     }
     if (a.actions && a.actions.length) {
       const row = document.createElement("div");
-      row.className = "lh-nib-actions";
+      row.className = "lh-gall-actions";
       for (const action of a.actions) {
-        const b = chip(action.label, undefined, "lh-nib-action");
+        const b = chip(action.label, undefined, "lh-gall-action");
         b.addEventListener("click", async () => {
           b.disabled = true;
           let said: string;
           try {
             said = await perform(core, action);
           } catch (err) {
-            console.error("[oakfall] nib action", err);
+            console.error("[oakfall] gall action", err);
             said = "That edit did not go through. The console has the detail.";
           }
           say(said);
@@ -208,12 +208,12 @@ export function mountNibView(core: Core, el: HTMLElement, session: NibSession, c
 
   const replay = () => {
     for (const turn of history) {
-      if ("nib" in turn) {
-        transcript.appendChild(nibCard(turn.nib));
+      if ("gall" in turn) {
+        transcript.appendChild(gallCard(turn.gall));
       } else {
         youLine(turn.you);
         const card = document.createElement("div");
-        card.className = "lh-nib-answer";
+        card.className = "lh-gall-answer";
         renderAnswer(card, turn.answer);
         transcript.appendChild(card);
       }
@@ -233,7 +233,7 @@ export function mountNibView(core: Core, el: HTMLElement, session: NibSession, c
   const greet = async () => {
     const scope = await updateScopeLine();
     if (history.length) return;
-    transcript.appendChild(nibCard(await greetingFor(core, scope, contextPath, "sidebar")));
+    transcript.appendChild(gallCard(await greetingFor(core, scope, contextPath, "sidebar")));
   };
 
   const renderChips = async () => {
@@ -273,7 +273,7 @@ export function mountNibView(core: Core, el: HTMLElement, session: NibSession, c
   };
 }
 
-/** What Nib says first, for the sidebar and the corner: where it is looking and what to ask. */
+/** What Gall says first, for the sidebar and the corner: where it is looking and what to ask. */
 async function greetingFor(core: Core, scope: Scope, contextPath: string, where: "sidebar" | "corner"): Promise<string> {
   const me = where === "corner" ? "Ask me" : "Ask";
   if (scope.kind === "none") {
@@ -289,7 +289,7 @@ async function greetingFor(core: Core, scope: Scope, contextPath: string, where:
   return `You are in ${title}${outside}. ${me} who is in it, how long it is, or where someone was last seen.`;
 }
 
-/** A few questions that fit what is on screen, so the first click shows what Nib can do. */
+/** A few questions that fit what is on screen, so the first click shows what Gall can do. */
 export async function suggest(core: Core, contextPath = ""): Promise<string[]> {
   const anchor = contextPath || core.host.activeFile();
   const scope = await scopeOf(core, anchor);
@@ -330,22 +330,22 @@ export async function suggest(core: Core, contextPath = ""): Promise<string[]> {
  * view on screen it shows a badge and, on hover or click, a speech bubble with the observation,
  * a follow-up, and a question box. Asking hands the conversation to the sidebar; the nib stays.
  */
-export function mountNibDock(core: Core, el: HTMLElement, session: NibSession, initialContext: string, follow = false): ViewHandle {
+export function mountGallDock(core: Core, el: HTMLElement, session: GallSession, initialContext: string, follow = false): ViewHandle {
   const { spoken } = session;
   let contextPath = initialContext;
   const dock = document.createElement("div");
-  dock.className = "lh-root lh-nib-dock" + (follow ? " lh-nib-dock-global" : "");
+  dock.className = "lh-root lh-gall-dock" + (follow ? " lh-gall-dock-global" : "");
   const button = document.createElement("button");
   button.type = "button";
-  button.className = "lh-nib-dock-button lh-nc lh-nc-idle";
-  button.title = "Nib";
-  button.setAttribute("aria-label", "Nib");
+  button.className = "lh-gall-dock-button lh-nc lh-nc-idle";
+  button.title = "Gall";
+  button.setAttribute("aria-label", "Gall");
   button.innerHTML = NIB_CHARACTER;
 
   // ---- the character's states, each fired by something real ----
   let stateTimer: ReturnType<typeof setTimeout> | null = null;
-  const restingState = (): NibState => (current ? "noticed" : "idle");
-  const setState = (s: NibState, thenRestAfterMs?: number) => {
+  const restingState = (): GallState => (current ? "noticed" : "idle");
+  const setState = (s: GallState, thenRestAfterMs?: number) => {
     if (stateTimer) clearTimeout(stateTimer);
     stateTimer = null;
     eyeRect = null;
@@ -380,7 +380,7 @@ export function mountNibDock(core: Core, el: HTMLElement, session: NibSession, i
   const eyeSurface: EventTarget = follow ? document : el;
   eyeSurface.addEventListener("pointermove", onMove as EventListener);
   eyeSurface.addEventListener("pointerleave", onLeave);
-  const onEvent = (e: NibEvent) => {
+  const onEvent = (e: GallEvent) => {
     if (e === "asking") setState("thinking");
     else if (e === "joke") setState("joke", 1400);
     else setState("found", 1100);
@@ -388,25 +388,25 @@ export function mountNibDock(core: Core, el: HTMLElement, session: NibSession, i
   const offEvent = session.on(onEvent);
 
   const bubble = document.createElement("div");
-  bubble.className = "lh-nib-bubble";
+  bubble.className = "lh-gall-bubble";
   bubble.hidden = true;
   const bubbleText = document.createElement("p");
-  bubbleText.className = "lh-nib-bubble-text";
+  bubbleText.className = "lh-gall-bubble-text";
   const bubbleCites = document.createElement("ul");
-  bubbleCites.className = "lh-nib-cites";
+  bubbleCites.className = "lh-gall-cites";
   const openChips = document.createElement("div");
-  openChips.className = "lh-nib-bubble-actions";
+  openChips.className = "lh-gall-bubble-actions";
   const actions = document.createElement("div");
-  actions.className = "lh-nib-bubble-actions";
+  actions.className = "lh-gall-bubble-actions";
   const askBtn = chip("");
   const dismissBtn = chip("Not now");
   actions.append(askBtn, dismissBtn);
   const form = document.createElement("form");
-  form.className = "lh-nib-form lh-nib-bubble-form";
+  form.className = "lh-gall-form lh-gall-bubble-form";
   const input = document.createElement("input");
   input.type = "text";
-  input.placeholder = "Ask Nib";
-  input.setAttribute("aria-label", "Ask Nib");
+  input.placeholder = "Ask Gall";
+  input.setAttribute("aria-label", "Ask Gall");
   const send = document.createElement("button");
   send.type = "submit";
   send.textContent = "Ask";
@@ -468,7 +468,7 @@ export function mountNibDock(core: Core, el: HTMLElement, session: NibSession, i
     try {
       nudges = await nudgesFor(core, contextPath);
     } catch (err) {
-      console.error("[oakfall] nib nudges", err);
+      console.error("[oakfall] gall nudges", err);
     }
     if (generation !== lookGeneration) return; // a newer look is on its way
     const before = current?.key ?? null;
@@ -497,7 +497,7 @@ export function mountNibDock(core: Core, el: HTMLElement, session: NibSession, i
     current = null;
     hide();
     renderBubble();
-    await session.askInSidebar(core, NIB_VIEW_TYPE, question, contextPath, preface);
+    await session.askInSidebar(core, GALL_VIEW_TYPE, question, contextPath, preface);
   };
 
   button.addEventListener("click", () => {

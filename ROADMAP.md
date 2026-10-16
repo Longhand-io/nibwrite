@@ -2,7 +2,7 @@
 
 > Hand-written public roadmap. The engineering ledger, `docs/PHASES.md`, is the source of truth for delivery state; this page is the narrative. Edit by hand.
 
-Oakfall is a writing studio for Obsidian: binder, snapshots with side-by-side compare, inspector, corkboard and threads, research, cast, maps, compile, and Nib, the assistant. Everything is stored as Markdown, frontmatter, files, and git commits under an open [vault spec](docs/spec.md). The importer that brings Scrivener projects across, history included, lives in [scrivener-to-obsidian](https://github.com/oakfall/scrivener-to-obsidian) and has its own roadmap.
+Oakfall is a writing studio for Obsidian: binder, snapshots with side-by-side compare, inspector, corkboard and threads, research, cast, maps, compile, and Gall, the assistant. Everything is stored as Markdown, frontmatter, files, and git commits under an open [vault spec](docs/spec.md). The importer that brings Scrivener projects across, history included, lives in [scrivener-to-obsidian](https://github.com/oakfall/scrivener-to-obsidian) and has its own roadmap.
 
 This is a three-horizon roadmap. Where a thing is designed but not built, this page says so.
 
@@ -11,7 +11,7 @@ This is a three-horizon roadmap. Where a thing is designed but not built, this p
 - **The vault spec, version 1.** Layout, frontmatter, snapshot files, snapshot commits, character and setting notes, map notes with pins and an optional relief source. Open, versioned, unknown fields preserved.
 - **The design.** User stories, architecture with a core and switchable modules, the sync and history model (files store by default, git optional, never inside a cloud-synced folder), the theme and template formats, the open-versus-paid split.
 - **The importer's RTF reader.** Scrivener's Cocoa RTF to Markdown without pandoc, keeping hyperlink fields that pandoc drops, which is where Scrivener stores comments and internal links. In the importer repo.
-- **The brand and the site.** Name, mark, Nib, and a landing page that shows each module as it will look, including a live relief map.
+- **The brand and the site.** Name, mark, Gall, and a landing page that shows each module as it will look, including a live relief map.
 
 ## Next: v0.1, the importer and Snapshots
 
@@ -30,7 +30,7 @@ v0.1 ships when a Scrivener refugee can import a project, open it in Obsidian, s
 - **v0.5 Map.** Any image as a map, pins to notes, place cards with computed scenes and pinned images.
 - **v0.6 Themes and templates.** The `--oak-` token system exposed, the theme folder format, the template folder format, six starter templates.
 - **v1.0.** Spec frozen at version 1 with a compatibility promise, the plugin in the Obsidian community list, the importer at 1.0.
-- **Paid, outside this repository, after v1.0:** Nib, the assistant, as the only subscription; compile presets; relief maps. Each is a module against the same core API and stores nothing the open modules cannot read.
+- **Paid, outside this repository, after v1.0:** Gall, the assistant, as the only subscription; compile presets; relief maps. Each is a module against the same core API and stores nothing the open modules cannot read.
 
 ### Non-goals, deliberate
 
@@ -38,4 +38,4 @@ v0.1 ships when a Scrivener refugee can import a project, open it in Obsidian, s
 - **No sync.** iCloud, Dropbox, Obsidian Sync, Syncthing, and git remotes already exist. Oakfall never moves files between devices.
 - **No database.** State is files, frontmatter, and commits. Nothing lives outside the vault except an optional git directory the plugin keeps out of cloud-synced folders.
 - **No private Obsidian APIs.** Public API only, so an Obsidian update cannot silently break history.
-- **No telemetry, no accounts, no network** from the plugin. Nib is the one module that talks to a model, only to the endpoint the writer chose, only when on.
+- **No telemetry, no accounts, no network** from the plugin. Gall is the one module that talks to a model, only to the endpoint the writer chose, only when on.

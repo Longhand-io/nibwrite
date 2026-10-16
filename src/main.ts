@@ -11,11 +11,11 @@ import { OakfallSettingTab } from "./host/obsidian/settings.js";
 import { binderModule } from "./modules/binder/index.js";
 import { inspectorModule } from "./modules/inspector/index.js";
 import { mapModule } from "./modules/map/index.js";
-import { nibModule } from "./modules/nib/index.js";
+import { gallModule } from "./modules/gall/index.js";
 import { snapshotsModule } from "./modules/snapshots/index.js";
 import { timelineModule } from "./modules/timeline/index.js";
 
-const MODULES = [binderModule, inspectorModule, snapshotsModule, mapModule, timelineModule, nibModule];
+const MODULES = [binderModule, inspectorModule, snapshotsModule, mapModule, timelineModule, gallModule];
 
 export default class OakfallPlugin extends Plugin {
   private moduleSettings: ModuleSettings = { enabled: {} };

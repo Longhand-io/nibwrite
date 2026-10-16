@@ -30,7 +30,7 @@ export interface ViewFactory {
   mount(el: HTMLElement, state: ViewState): ViewHandle;
 }
 
-/** UI a module lays over the whole window, once, for as long as it is on: Nib in the corner. */
+/** UI a module lays over the whole window, once, for as long as it is on: Gall in the corner. */
 export interface Overlay {
   id: string;
   mount(el: HTMLElement): ViewHandle;

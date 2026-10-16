@@ -5,7 +5,7 @@ import assert from "node:assert/strict";
 import { test } from "node:test";
 import { createCore } from "../src/core/modules.js";
 import { MemoryHost } from "../src/host/memory.js";
-import { nudgesFor } from "../src/modules/nib/nudges.js";
+import { nudgesFor } from "../src/modules/gall/nudges.js";
 
 function vault(): MemoryHost {
   return new MemoryHost({

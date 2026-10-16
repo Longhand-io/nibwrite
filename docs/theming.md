@@ -4,7 +4,7 @@ Oakfall is meant to be built on. Two things are open formats from day one: theme
 
 ## How Oakfall is styled
 
-Every Oakfall panel, the compare view, the binder, the inspector, the corkboard, the cast panel, the maps, and Nib's margin, is drawn from one set of CSS custom properties with the `--oak-` prefix. Nothing is hard-coded. The core ships the default set, which is the paper-and-ink palette on this site, and a theme overrides some or all of it.
+Every Oakfall panel, the compare view, the binder, the inspector, the corkboard, the cast panel, the maps, and Gall's margin, is drawn from one set of CSS custom properties with the `--oak-` prefix. Nothing is hard-coded. The core ships the default set, which is the paper-and-ink palette on this site, and a theme overrides some or all of it.
 
 Oakfall themes sit on top of Obsidian themes, not instead of them. An Obsidian theme still styles the editor, the file explorer, and the app chrome. A Oakfall theme styles Oakfall's panels and can read Obsidian's own variables so the two agree.
 

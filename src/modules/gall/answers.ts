@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: Apache-2.0
 // Copyright 2026 0xSpectra LLC and the Oakfall Authors.
 
-// Nib's retrieval answers: the questions that need lookup, not reading. Everything here is
-// computed from the files through the core, with no model and no network. The hosted Nib
+// Gall's retrieval answers: the questions that need lookup, not reading. Everything here is
+// computed from the files through the core, with no model and no network. The hosted Gall
 // answers the rest behind the same panel later. Voice rules: second person, brief, names the
 // file or scene it means, never praises the writing, one joke ever.
 
@@ -20,7 +20,7 @@ export interface Cite {
   path: string;
 }
 
-/** Something Nib offers to do. Every action is one frontmatter edit the writer can see and undo. */
+/** Something Gall offers to do. Every action is one frontmatter edit the writer can see and undo. */
 export interface Action {
   label: string;
   kind: "set-place" | "match-names";
@@ -40,7 +40,7 @@ export interface Answer {
   kind: "last-seen" | "set-at" | "unused" | "who-in" | "length" | "on-map" | "audit" | "open" | "help";
 }
 
-/** Where Nib is looking: the active note's project, the whole vault, or nowhere yet. */
+/** Where Gall is looking: the active note's project, the whole vault, or nowhere yet. */
 export interface Scope {
   kind: "project" | "vault" | "none";
   root: string;
@@ -48,7 +48,7 @@ export interface Scope {
 }
 
 /**
- * Where Nib looks. A project picked by hand or the active note's project; the whole vault for a
+ * Where Gall looks. A project picked by hand or the active note's project; the whole vault for a
  * note outside any project; nowhere when nothing is open and nothing was picked.
  */
 export async function scopeOf(core: Core, path: string | null = core.host.activeFile()): Promise<Scope> {
@@ -69,7 +69,7 @@ export interface Memory {
   jokeTold: boolean;
 }
 
-/** One question shape Nib understands, in the order they are tried. */
+/** One question shape Gall understands, in the order they are tried. */
 interface Route {
   patterns: RegExp[];
   /** shown on the help card; the chips are built elsewhere from the project */
@@ -233,7 +233,7 @@ async function audit(core: Core, name: string): Promise<Answer> {
   };
 }
 
-/** Carry out an action. Returns what Nib says afterwards. Every change is a frontmatter edit. */
+/** Carry out an action. Returns what Gall says afterwards. Every change is a frontmatter edit. */
 export async function perform(core: Core, action: Action): Promise<string> {
   const subject = await core.projects.byPath(action.subject);
   const subjectTitle = subject?.title ?? stripPrefix(baseName(action.subject));
@@ -306,7 +306,7 @@ async function onMap(core: Core, name: string): Promise<Answer> {
 }
 
 function help(memory: Memory): Answer {
-  const lines = ["I answer from your files. Ask me:", ...ROUTES.map((r) => r.example), "Reading the prose itself is the hosted Nib, which is off."];
+  const lines = ["I answer from your files. Ask me:", ...ROUTES.map((r) => r.example), "Reading the prose itself is the hosted Gall, which is off."];
   const answer: Answer = { kind: "help", text: lines.join("\n"), cites: [] };
   if (!memory.jokeTold) {
     memory.jokeTold = true;
@@ -322,7 +322,7 @@ function unknown(name: string): Answer {
 
 // ---- helpers ----
 
-/** The active note's project, else the whole vault. Nib never silently picks a project. */
+/** The active note's project, else the whole vault. Gall never silently picks a project. */
 async function scopeRoot(core: Core): Promise<string> {
   return (await scopeOf(core)).root;
 }

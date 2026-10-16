@@ -4,7 +4,7 @@
 
 ## Two things, one contract
 
-**The studio** is Oakfall: the core (spec reader and writer, project registry, history store, module loader) and the modules a writer would name (binder, map, timeline, Nib, and the rest). It knows how a manuscript is laid out, what a scene is, where a character was last seen. It does not know what program it is running in.
+**The studio** is Oakfall: the core (spec reader and writer, project registry, history store, module loader) and the modules a writer would name (binder, map, timeline, Gall, and the rest). It knows how a manuscript is laid out, what a scene is, where a character was last seen. It does not know what program it is running in.
 
 **The host** is the program the studio runs inside. It owns the window, the prose editor, the files on disk, search, `[[link]]` resolution, the places panels can go, and sync and mobile if it has them. Today the host is Obsidian.
 
@@ -13,7 +13,7 @@ They meet at one interface, `src/host/host.ts`. The studio only ever calls those
 ```
 +---------------------------------------------------+
 |  studio: core + modules                           |
-|  binder · map · timeline · nib · new · snapshots  |
+|  binder · map · timeline · gall · new · snapshots  |
 |  src/core, src/modules                            |
 +------------------------ Host interface -----------+
 |  host adapter: src/host/obsidian  (~400 lines)    |
@@ -32,7 +32,7 @@ The whole contract, grouped by what it is for. A new host implements exactly thi
 
 **Links.** `resolveLink` from link text to a path, `linkTo` from a path to the shortest unambiguous `[[link]]`, and `resourceUrl` so an `<img>` can show a file in the vault.
 
-**Places to put things.** `registerView` and `openView` for a panel in a tab or a sidebar; `registerAutoView` so a note of a given type opens in a panel instead of as text, with `openNoteAsMarkdown` as the way back; `registerOverlay` for UI over the whole window, which is where Nib sits.
+**Places to put things.** `registerView` and `openView` for a panel in a tab or a sidebar; `registerAutoView` so a note of a given type opens in a panel instead of as text, with `openNoteAsMarkdown` as the way back; `registerOverlay` for UI over the whole window, which is where Gall sits.
 
 **Ways in.** `registerCommand` for the command palette, `registerRibbon` for an always-visible button, `registerFileMenu` for right-click entries on files and folders.
 
@@ -52,7 +52,7 @@ The Obsidian plugin is the adapter plus an entry point: `src/host/obsidian/host.
 
 ## A second host
 
-A second host is the same studio mounted through a different adapter. The candidate is a Oakfall desktop application: one window, one book open at a time, the binder on the left, a Markdown editor in the middle, the map, timeline, and Nib as panels, and a folder on disk as the project. Its adapter would implement the list above on top of a desktop shell such as Tauri and an editor such as CodeMirror, the same components Obsidian is built from.
+A second host is the same studio mounted through a different adapter. The candidate is a Oakfall desktop application: one window, one book open at a time, the binder on the left, a Markdown editor in the middle, the map, timeline, and Gall as panels, and a folder on disk as the project. Its adapter would implement the list above on top of a desktop shell such as Tauri and an editor such as CodeMirror, the same components Obsidian is built from.
 
 What the writer would get: Oakfall with no Obsidian around it. No vault of many projects, no community-plugin switch, no Properties panel showing pins as JSON, the brand on the window. What they would lose until it is built: mobile, sync, and the plugin directory as a way to find Oakfall.
 

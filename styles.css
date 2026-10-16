@@ -563,16 +563,16 @@
   box-shadow: 0 0 0 2px var(--oak-paper), 0 0 0 3.5px var(--oak-ink);
 }
 
-/* ---- Nib ---- */
+/* ---- Gall ---- */
 
-.lh-nib {
+.lh-gall {
   display: flex;
   flex-direction: column;
   height: 100%;
   background: var(--oak-paper);
 }
 
-.lh-nib-head {
+.lh-gall-head {
   display: flex;
   align-items: center;
   gap: 0.7rem;
@@ -581,7 +581,7 @@
   flex-wrap: wrap;
 }
 
-.lh-nib-mark {
+.lh-gall-mark {
   display: grid;
   place-items: center;
   width: 2.4rem;
@@ -591,30 +591,30 @@
   color: var(--oak-paper);
 }
 
-.lh-nib-mark svg {
+.lh-gall-mark svg {
   width: 1.7rem;
   height: 1.7rem;
   color: var(--oak-paper);
 }
 
-.lh-nib-mark svg circle,
-.lh-nib-mark svg line {
+.lh-gall-mark svg circle,
+.lh-gall-mark svg line {
   stroke: var(--oak-ink);
   fill: var(--oak-ink);
 }
 
-.lh-nib-title {
+.lh-gall-title {
   font-family: var(--oak-font-body);
   font-size: 1.15rem;
   font-weight: 600;
 }
 
-.lh-nib-sub {
+.lh-gall-sub {
   color: var(--oak-graphite);
   font-size: 0.78rem;
 }
 
-.lh-nib-transcript {
+.lh-gall-transcript {
   flex: 1;
   overflow-y: auto;
   padding: 0.8rem 1rem;
@@ -623,7 +623,7 @@
   gap: 0.6rem;
 }
 
-.lh-nib-you {
+.lh-gall-you {
   align-self: flex-end;
   max-width: 85%;
   padding: 0.4rem 0.7rem;
@@ -633,7 +633,7 @@
   font-size: 0.9rem;
 }
 
-.lh-nib-answer {
+.lh-gall-answer {
   align-self: flex-start;
   max-width: 95%;
   padding: 0.55rem 0.8rem;
@@ -644,46 +644,46 @@
   line-height: 1.45;
 }
 
-.lh-nib-answer p {
+.lh-gall-answer p {
   margin: 0 0 0.35rem;
 }
 
-.lh-nib-answer p:last-child {
+.lh-gall-answer p:last-child {
   margin-bottom: 0;
 }
 
-.lh-nib-thinking {
+.lh-gall-thinking {
   color: var(--oak-graphite);
   border-style: dashed;
 }
 
-.lh-nib-cites {
+.lh-gall-cites {
   list-style: none;
   margin: 0.5rem 0 0;
   padding: 0;
   font-family: var(--oak-font-ui);
 }
 
-.lh-nib-cites li {
+.lh-gall-cites li {
   padding: 0.35rem 0;
   border-top: 1px solid var(--oak-rule);
   cursor: pointer;
 }
 
-.lh-nib-cite-label {
+.lh-gall-cite-label {
   display: block;
   font-size: 0.85rem;
   font-weight: 600;
   text-decoration: underline dotted;
 }
 
-.lh-nib-cite-detail {
+.lh-gall-cite-detail {
   display: block;
   color: var(--oak-graphite);
   font-size: 0.8rem;
 }
 
-.lh-nib-chips {
+.lh-gall-chips {
   display: flex;
   flex-wrap: wrap;
   gap: 0.35rem;
@@ -691,7 +691,7 @@
   border-top: 1px solid var(--oak-rule);
 }
 
-.lh-root button.lh-nib-chip,
+.lh-root button.lh-gall-chip,
 .lh-root button.lh-chip {
   padding: 0.2rem 0.6rem;
   font: inherit;
@@ -704,18 +704,18 @@
   cursor: pointer;
 }
 
-.lh-root button.lh-nib-chip:hover,
+.lh-root button.lh-gall-chip:hover,
 .lh-root button.lh-chip:hover {
   border-color: var(--oak-ink);
 }
 
-.lh-nib-form {
+.lh-gall-form {
   display: flex;
   gap: 0.4rem;
   padding: 0.6rem 1rem 0.8rem;
 }
 
-.lh-nib-form input {
+.lh-gall-form input {
   flex: 1;
   padding: 0.4rem 0.6rem;
   font: inherit;
@@ -725,12 +725,12 @@
   border-radius: var(--oak-card-radius);
 }
 
-.lh-nib-form input:focus {
+.lh-gall-form input:focus {
   outline: 2px solid var(--oak-ink);
   outline-offset: 1px;
 }
 
-.lh-root .lh-nib-form button {
+.lh-root .lh-gall-form button {
   padding: 0.4rem 0.8rem;
   font: inherit;
   color: var(--oak-paper);
@@ -741,9 +741,9 @@
   cursor: pointer;
 }
 
-/* ---- Nib in the corner ---- */
+/* ---- Gall in the corner ---- */
 
-.lh-nib-dock {
+.lh-gall-dock {
   position: absolute;
   right: 1rem;
   bottom: 1rem;
@@ -755,12 +755,12 @@
   pointer-events: none;
 }
 
-.lh-nib-dock > * {
+.lh-gall-dock > * {
   pointer-events: auto;
 }
 
 /* the character has its own colours in every theme, like a sticker: ink on a paper disc */
-.lh-root button.lh-nib-dock-button {
+.lh-root button.lh-gall-dock-button {
   width: 4.8rem;
   height: 4.8rem;
   padding: 0.4rem;
@@ -772,14 +772,14 @@
   cursor: pointer;
 }
 
-.lh-root button.lh-nib-dock-button svg {
+.lh-root button.lh-gall-dock-button svg {
   width: 100%;
   height: 100%;
 }
 
-.lh-root button.lh-nib-dock-button:hover,
+.lh-root button.lh-gall-dock-button:hover,
 
-.lh-nib-bubble {
+.lh-gall-bubble {
   position: relative;
   width: 19rem;
   max-width: calc(100vw - 3rem);
@@ -794,7 +794,7 @@
   line-height: 1.4;
 }
 
-.lh-nib-bubble::after {
+.lh-gall-bubble::after {
   content: "";
   position: absolute;
   right: 0.9rem;
@@ -807,34 +807,34 @@
   transform: rotate(45deg);
 }
 
-.lh-nib-bubble[hidden] {
+.lh-gall-bubble[hidden] {
   display: none;
 }
 
-.lh-nib-bubble-text {
+.lh-gall-bubble-text {
   margin: 0 0 0.4rem;
 }
 
-.lh-nib-bubble .lh-nib-cites {
+.lh-gall-bubble .lh-gall-cites {
   margin: 0 0 0.4rem;
 }
 
-.lh-nib-bubble .lh-nib-cites li {
+.lh-gall-bubble .lh-gall-cites li {
   cursor: pointer;
 }
 
-.lh-nib-bubble-actions {
+.lh-gall-bubble-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.35rem;
   margin-bottom: 0.4rem;
 }
 
-.lh-nib-bubble-actions:empty {
+.lh-gall-bubble-actions:empty {
   display: none;
 }
 
-.lh-nib-bubble-form {
+.lh-gall-bubble-form {
   padding: 0;
 }
 
@@ -897,7 +897,7 @@
   .lh-nc-noticed .lh-nc-badge, .lh-nc-thinking .lh-nc-scribble { opacity: 1; }
 }
 
-.lh-root .lh-nib-chips-toggle {
+.lh-root .lh-gall-chips-toggle {
   align-self: flex-start;
   margin: 0.3rem 1rem 0;
   padding: 0.1rem 0.5rem;
@@ -911,17 +911,17 @@
   text-decoration: underline dotted;
 }
 
-.lh-nib-chips[hidden] {
+.lh-gall-chips[hidden] {
   display: none;
 }
 
-.lh-nib-chips {
+.lh-gall-chips {
   flex-wrap: nowrap;
   overflow-x: auto;
   scrollbar-width: thin;
 }
 
-.lh-root button.lh-nib-chip {
+.lh-root button.lh-gall-chip {
   white-space: nowrap;
 }
 
@@ -929,18 +929,18 @@
   position: relative;
 }
 
-.lh-nib-actions {
+.lh-gall-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.35rem;
   margin-top: 0.5rem;
 }
 
-.lh-root button.lh-nib-action {
+.lh-root button.lh-gall-action {
   border-color: var(--oak-ink);
 }
 
-.lh-root button.lh-nib-action:disabled {
+.lh-root button.lh-gall-action:disabled {
   opacity: 0.5;
   cursor: default;
 }
@@ -1150,15 +1150,15 @@
   margin-right: 0.3rem;
 }
 
-/* Nib over the whole window, above the status bar, out of the sidebars' way */
-.lh-nib-dock-global {
+/* Gall over the whole window, above the status bar, out of the sidebars' way */
+.lh-gall-dock-global {
   position: fixed;
   right: 1.2rem;
   bottom: 2.6rem;
   z-index: 60;
 }
 
-.lh-nib-dock-global .lh-nib-bubble {
+.lh-gall-dock-global .lh-gall-bubble {
   width: 21rem;
 }
 
@@ -1660,11 +1660,11 @@
 }
 
 
-.lh-nib-titles {
+.lh-gall-titles {
   flex: 1;
 }
 
-.lh-root select.lh-nib-picker {
+.lh-root select.lh-gall-picker {
   flex-basis: 100%;
   font-size: 0.9rem;
   margin-top: 0.2rem;
