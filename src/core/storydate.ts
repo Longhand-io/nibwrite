@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
+// Copyright 2026 0xSpectra LLC and the Oakfall Authors.
 
 // Story dates. A `date` in frontmatter is a year, a year and month, or a full date, in ISO
 // order, and may be far outside what JavaScript's Date handles, so the arithmetic is our

@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
+// Copyright 2026 0xSpectra LLC and the Oakfall Authors.
 
 // Appearances: where a note (a place, a character, anything) turns up in the manuscript.
 // Never stored. A document appears when it links to the target, or, when the target note

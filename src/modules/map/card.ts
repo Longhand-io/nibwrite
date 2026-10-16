@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
+// Copyright 2026 0xSpectra LLC and the Oakfall Authors.
 
 // The place card: what a pin shows on hover. The target's name and kind, its aliases, the
 // images and notes pinned to it, a search box, and every scene set there with the sentence
@@ -139,7 +139,7 @@ export function createPlaceCard(core: Core, targetPath: string, label: string): 
         renderList();
       } catch (err) {
         meta.textContent = `Could not read ${targetPath}`;
-        console.error("[nibwrite] place card", err);
+        console.error("[oakfall] place card", err);
       } finally {
         loading = null;
       }

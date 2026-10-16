@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
+// Copyright 2026 0xSpectra LLC and the Oakfall Authors.
 
 import assert from "node:assert/strict";
 import { test } from "node:test";
@@ -14,7 +14,7 @@ const doc = (id: string, type: string) => note({ id, type });
 
 function vault(): MemoryHost {
   return new MemoryHost({
-    "Novel/_Project.md": "---\nnibwrite: 1\n---\n",
+    "Novel/_Project.md": "---\noakfall: 1\n---\n",
     "Novel/Draft/01 Part One/01 The Letter.md": doc("C1", "text"),
     "Novel/Draft/01 Part One/02 The Tin.md": doc("C2", "text"),
     "Novel/Draft/02 Part Two/01 Return.md": doc("C3", "text"),
@@ -51,9 +51,9 @@ test("placement: scenes next to the active scene, else the manuscript folder wha
 
 test("placement: a project picked by hand gets the new scene, not the folder of a note open in another", async () => {
   const host = new MemoryHost({
-    "Novel/_Project.md": "---\nnibwrite: 1\n---\n",
+    "Novel/_Project.md": "---\noakfall: 1\n---\n",
     "Novel/Draft/01 Part One/02 The Tin.md": doc("C2", "text"),
-    "Other/_Project.md": "---\nnibwrite: 1\n---\n",
+    "Other/_Project.md": "---\noakfall: 1\n---\n",
     "Other/Manuscript/01 Alpha.md": doc("O1", "text"),
   });
   const core = createCore(host);
@@ -93,7 +93,7 @@ test("New… asks for the kind; New here… uses the folder; New folder creates 
   const core = createCore(host);
   await binderModule.register(core);
   assert.equal(host.ribbon.length, 2);
-  assert.equal(host.views.get("nibwrite-binder")?.placement, "left");
+  assert.equal(host.views.get("oakfall-binder")?.placement, "left");
   host.choices.push(KINDS.find((k) => k.label === "Character"));
   host.prompts.push("Tom");
   await host.commands.get("new")!.run();
@@ -118,7 +118,7 @@ test("New project makes a folder with a project note and a first chapter, and th
   host.prompts.push("Saltmarsh: a novel");
   await host.commands.get("new")!.run();
   const note = host.files.get("Saltmarsh- a novel/_Project.md");
-  assert.ok(note && note.includes("nibwrite: 1") && note.includes('title: "Saltmarsh: a novel"'));
+  assert.ok(note && note.includes("oakfall: 1") && note.includes('title: "Saltmarsh: a novel"'));
   assert.ok(host.files.has("Saltmarsh- a novel/Manuscript/01 Chapter One.md"));
   assert.deepEqual((await core.projects.roots()).map((r) => r.root), ["Saltmarsh- a novel"]);
 });

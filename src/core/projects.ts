@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
+// Copyright 2026 0xSpectra LLC and the Oakfall Authors.
 
 // The project registry. A project is any folder with a `_Project.md`. Documents are the
 // Markdown files under it, in binder order: numeric prefix on each path segment, then the
@@ -135,12 +135,12 @@ export class Projects {
       const path = doc.path;
       if (path !== PROJECT_NOTE && !path.endsWith("/" + PROJECT_NOTE)) continue;
       const root = path === PROJECT_NOTE ? "" : path.slice(0, -PROJECT_NOTE.length - 1);
-      const raw = fm.get(doc.fields, "nibwrite") ?? fm.get(doc.fields, "longhand"); // vaults written before the rename
+      const raw = fm.get(doc.fields, "oakfall") ?? fm.get(doc.fields, "nibwrite") ?? fm.get(doc.fields, "longhand"); // vaults written before the renames
       const version = typeof raw === "number" ? raw : typeof raw === "string" && raw.trim() !== "" && Number.isFinite(Number(raw)) ? Number(raw) : null;
       if (version !== null && version > SPEC_VERSION && !this.warned.has(path)) {
         this.warned.add(path);
         this.host.notify(
-          `${root || "This vault"} uses Nibwrite spec ${version}; this plugin reads ${SPEC_VERSION}. Fields it does not know are kept as they are.`,
+          `${root || "This vault"} uses Oakfall spec ${version}; this plugin reads ${SPEC_VERSION}. Fields it does not know are kept as they are.`,
         );
       }
       out.push({ root, notePath: path, title: doc.title ?? (root || "Vault"), version });

@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
+// Copyright 2026 0xSpectra LLC and the Oakfall Authors.
 
 // Story calendars. A project says how its time works in the project note's `calendar`
 // block; dates in scenes are read and written through that. Three kinds:

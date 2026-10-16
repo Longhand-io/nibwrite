@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
+// Copyright 2026 0xSpectra LLC and the Oakfall Authors.
 
 // The binder module. First piece: New, the Scrivener-style "add a file and say what kind".
 // Scene, folder, character, setting, event, or map. Each lands where its kind already lives
@@ -11,7 +11,7 @@ import { childrenOf, dirOf, newId, nextName, nowIso, safeName, uniquePath } from
 import { newMapNote } from "../map/model.js";
 import { mountBinderView } from "./view.js";
 
-export const BINDER_VIEW = "nibwrite-binder";
+export const BINDER_VIEW = "oakfall-binder";
 
 export type NewKindId = "scene" | "folder" | "character" | "setting" | "event" | "map" | "project";
 
@@ -50,7 +50,7 @@ export const binderModule: Module = {
       await host.createFolder(root);
       await host.createFolder(`${root}/Manuscript`);
       const note = core.spec.newNote(
-        { nibwrite: 1, title, labels: ["Red", "Blue", "Green"], statuses: ["To Do", "First Draft", "Revised", "Done"], keywords: [] },
+        { oakfall: 1, title, labels: ["Red", "Blue", "Green"], statuses: ["To Do", "First Draft", "Revised", "Done"], keywords: [] },
         `# ${title}\n\nThe project note. Labels are the threads on the timeline; the calendar block, if you add one, says how story dates read.\n`,
       );
       await host.writeFile(`${root}/_Project.md`, note);

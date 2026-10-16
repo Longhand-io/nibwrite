@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
+// Copyright 2026 0xSpectra LLC and the Oakfall Authors.
 
 // The flat map view. An image (or a blank canvas) with pins on top. Hover a pin for its place
 // card, click to open its note, drag to move it, double-click the map to add one, right-click
@@ -87,7 +87,7 @@ export function mountMapView(core: Core, el: HTMLElement, path: string): ViewHan
       b.type = "button";
       b.className = "lh-map-swatch";
       b.title = c ? COLOR_LABELS[c] : "Default ink for the style";
-      if (c) b.style.setProperty("--swatch", `var(--nw-color-${c})`);
+      if (c) b.style.setProperty("--swatch", `var(--oak-color-${c})`);
       else b.classList.add("lh-map-swatch-none");
       b.addEventListener("click", () => {
         set(c);

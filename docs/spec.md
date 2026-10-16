@@ -171,7 +171,7 @@ pins: []
 
 ```yaml
 ---
-nibwrite: 1                                   # spec version
+oakfall: 1                                   # spec version
 title: Novel
 source: scrivener
 source_creator: SCRMAC-3.5.2-17486
@@ -234,7 +234,7 @@ Word-Count: 2417
 - Subject: `snap(<path relative to repo root>): <title>`. For a folder snapshot the path is the folder.
 - Trailers follow git's trailer format so `git interpret-trailers` and `git log --format=%(trailers:key=Snapshot-Doc-Id)` work.
 - `Snapshot-Doc-Id` is what readers filter on. It survives renames; `--follow` heuristics are never required.
-- `Snapshot-Source` is `scrivener` for imported history and `nibwrite` for snapshots taken in Obsidian.
+- `Snapshot-Source` is `scrivener` for imported history and `oakfall` for snapshots taken in Obsidian.
 - Imported snapshots use the original Scrivener date as both author and committer date.
 - The import itself ends with a commit whose subject is `feat(<project>): import from Scrivener` and whose trailers record the source package and document count.
 
@@ -243,6 +243,6 @@ Auto-commits made by other tools (for example the Obsidian Git plugin) are not s
 ## Compatibility promises
 
 - Version 1 readers ignore fields they do not know and never delete them.
-- A future version bumps `nibwrite:` on `_Project.md` and documents the migration.
-- Vaults written before the 2026-10 rename carry `longhand: 1` instead; readers treat the two fields as the same and new writes use `nibwrite:`.
+- A future version bumps `oakfall:` on `_Project.md` and documents the migration.
+- Vaults written before the 2026-10 rename carry `longhand: 1` instead; readers treat the two fields as the same and new writes use `oakfall:`.
 - No file in the vault is ever required to be binary, and no state is stored outside the vault and its git repository.

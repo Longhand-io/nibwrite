@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
+// Copyright 2026 0xSpectra LLC and the Oakfall Authors.
 
 // Writes the Harrowmere demo project: a synthetic novel with enough metadata to exercise every
 // module. Three parts, twelve scenes with dates, labels, statuses, synopses, and links; three
@@ -51,7 +51,7 @@ const created = (d) => `${d}T09:00:00-07:00`;
 // the project note is the project's settings; written by hand so the choices show as comments
 mkdirSync(root, { recursive: true });
 writeFileSync(join(root, "_Project.md"), `---
-nibwrite: 1
+oakfall: 1
 title: "Harrowmere"
 labels: ["Mara", "Tom", "The town"]      # the threads on the corkboard and the timeline, in this order
 statuses: ["To Do", "First Draft", "Revised", "Done"]
@@ -67,7 +67,7 @@ calendar:                                 # how story dates in this project read
 ---
 # Harrowmere
 
-A synthetic project for trying Nibwrite. Every scene, character, place, and event here was written for the demo; none of it is from a real manuscript.
+A synthetic project for trying Oakfall. Every scene, character, place, and event here was written for the demo; none of it is from a real manuscript.
 `);
 
 // ---- manuscript: three parts, twelve scenes ----

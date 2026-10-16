@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
+// Copyright 2026 0xSpectra LLC and the Oakfall Authors.
 
 // Nib, the assistant. Off by default. This module is the panel and the answers that need no
 // model; it talks to nothing outside the vault. The hosted Nib plugs in behind the same panel.

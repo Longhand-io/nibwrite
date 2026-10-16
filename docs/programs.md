@@ -1,6 +1,6 @@
 # Programs
 
-> The product lines Nibwrite is built from. `ROADMAP.md` tells the story by release and `PHASES.md` tracks delivery; this page says what each line is for, what in it is open and what is paid, and where it stands. Every phase in the ledger carries a `program` key that points here. Edit by hand.
+> The product lines Oakfall is built from. `ROADMAP.md` tells the story by release and `PHASES.md` tracks delivery; this page says what each line is for, what in it is open and what is paid, and where it stands. Every phase in the ledger carries a `program` key that points here. Edit by hand.
 
 Two rules hold across every program. Anything that reads or writes the vault is open source under Apache-2.0, because a writing tool that can hold a manuscript hostage does not get adopted. Anything paid is convenience, computation, or craft on top of files the open modules can already read, so turning it off changes nothing in your files.
 
@@ -13,7 +13,7 @@ Two rules hold across every program. Anything that reads or writes the vault is 
 | **Research and Cast** | Attachments, PDF highlights that link back, character and setting notes with computed appearances | All of it | Nothing | L6 | Cast, Research | Appearances engine done and used by the map; panels next |
 | **Nib** | The assistant in the margin: answers from the files and history, proposes edits the writer accepts, never writes prose | The panel and the retrieval answers that need no model | Hosted models and manuscript intelligence, by subscription; bring-your-own-key at a lower annual price | N0 onward, own ledger later | Nib | Panel with retrieval answers in progress |
 | **Compile** | Manuscript to docx, pdf, epub, and Markdown with presets writers already pay for elsewhere | A plain Markdown compile | Submission presets, one-time | later | Compile | Not started |
-| **Themes and templates** | Open formats for how Nibwrite looks and what a project starts with | The formats, the default theme, six starter templates | An optional store with revenue share, never required | L8 | none | Formats documented |
+| **Themes and templates** | Open formats for how Oakfall looks and what a project starts with | The formats, the default theme, six starter templates | An optional store with revenue share, never required | L8 | none | Formats documented |
 
 ## How a program grows
 
@@ -21,4 +21,4 @@ A program starts as one module and one row in the ledger. It becomes a line wort
 
 ## What is not a program
 
-Sync, accounts, and a database. Nibwrite never moves files between devices, never requires an account for anything but Nib's hosted tier, and stores nothing outside the vault and its optional git directory. See the roadmap's non-goals.
+Sync, accounts, and a database. Oakfall never moves files between devices, never requires an account for anything but Nib's hosted tier, and stores nothing outside the vault and its optional git directory. See the roadmap's non-goals.

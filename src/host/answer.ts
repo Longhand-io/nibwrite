@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
+// Copyright 2026 0xSpectra LLC and the Oakfall Authors.
 
 // One answer from a picker. A picker can be dismissed or chosen from, and a host may report
 // the two in either order: Obsidian's suggest modals close first and only then say what was

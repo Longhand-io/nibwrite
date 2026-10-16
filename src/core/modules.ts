@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
+// Copyright 2026 0xSpectra LLC and the Oakfall Authors.
 
 // The module loader. The core never imports a module; the plugin entry hands the loader a
 // list, and settings decide which of them register. Modules see only the Core.

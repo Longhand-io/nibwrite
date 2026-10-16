@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
+// Copyright 2026 0xSpectra LLC and the Oakfall Authors.
 
 // Typed access to spec fields on a note. Everything goes through frontmatter.ts so
 // unknown fields survive every write.
@@ -178,7 +178,7 @@ export class Spec {
   /** The spec version a project note declares; null when it has none. Reads the pre-rename `longhand` field too. */
   projectVersion(text: string): number | null {
     const f = fm.parse(text);
-    return num(fm.get(f, "nibwrite") ?? fm.get(f, "longhand"));
+    return num(fm.get(f, "oakfall") ?? fm.get(f, "nibwrite") ?? fm.get(f, "longhand"));
   }
 
   /** Text for a brand-new note. */

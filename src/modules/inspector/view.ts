@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
+// Copyright 2026 0xSpectra LLC and the Oakfall Authors.
 
 // The inspector view: the note you are in, seen from the side. Its title, kind, status,
 // label, and words, then the synopsis, the document notes, and the note's snapshots, in the
@@ -10,7 +10,7 @@ import type { ViewHandle } from "../../host/host.js";
 import { formatCount } from "../../core/text.js";
 import { inspect, spans, type Inspection } from "./model.js";
 
-export const INSPECTOR_VIEW_TYPE = "nibwrite-inspector";
+export const INSPECTOR_VIEW_TYPE = "oakfall-inspector";
 
 const isNote = (path: string | null): path is string => !!path && path.toLowerCase().endsWith(".md");
 

@@ -1,10 +1,10 @@
 # Hosts
 
-> What Nibwrite is, what it runs inside, and where the line between them sits. `architecture.md` states the rule; this page scopes it. Edit by hand.
+> What Oakfall is, what it runs inside, and where the line between them sits. `architecture.md` states the rule; this page scopes it. Edit by hand.
 
 ## Two things, one contract
 
-**The studio** is Nibwrite: the core (spec reader and writer, project registry, history store, module loader) and the modules a writer would name (binder, map, timeline, Nib, and the rest). It knows how a manuscript is laid out, what a scene is, where a character was last seen. It does not know what program it is running in.
+**The studio** is Oakfall: the core (spec reader and writer, project registry, history store, module loader) and the modules a writer would name (binder, map, timeline, Nib, and the rest). It knows how a manuscript is laid out, what a scene is, where a character was last seen. It does not know what program it is running in.
 
 **The host** is the program the studio runs inside. It owns the window, the prose editor, the files on disk, search, `[[link]]` resolution, the places panels can go, and sync and mobile if it has them. Today the host is Obsidian.
 
@@ -44,7 +44,7 @@ Thirty-odd functions. The in-memory host that backs the tests implements all of 
 
 ## What the studio never asks the host for
 
-An editor. The host's own editor edits the prose; Nibwrite's panels sit beside it. A database. Settings storage beyond one on/off switch per module. Network. Anything Obsidian-shaped: leaves, workspaces, plugin lifecycles stay inside the adapter.
+An editor. The host's own editor edits the prose; Oakfall's panels sit beside it. A database. Settings storage beyond one on/off switch per module. Network. Anything Obsidian-shaped: leaves, workspaces, plugin lifecycles stay inside the adapter.
 
 ## The plugin
 
@@ -52,9 +52,9 @@ The Obsidian plugin is the adapter plus an entry point: `src/host/obsidian/host.
 
 ## A second host
 
-A second host is the same studio mounted through a different adapter. The candidate is a Nibwrite desktop application: one window, one book open at a time, the binder on the left, a Markdown editor in the middle, the map, timeline, and Nib as panels, and a folder on disk as the project. Its adapter would implement the list above on top of a desktop shell such as Tauri and an editor such as CodeMirror, the same components Obsidian is built from.
+A second host is the same studio mounted through a different adapter. The candidate is a Oakfall desktop application: one window, one book open at a time, the binder on the left, a Markdown editor in the middle, the map, timeline, and Nib as panels, and a folder on disk as the project. Its adapter would implement the list above on top of a desktop shell such as Tauri and an editor such as CodeMirror, the same components Obsidian is built from.
 
-What the writer would get: Nibwrite with no Obsidian around it. No vault of many projects, no community-plugin switch, no Properties panel showing pins as JSON, the brand on the window. What they would lose until it is built: mobile, sync, and the plugin directory as a way to find Nibwrite.
+What the writer would get: Oakfall with no Obsidian around it. No vault of many projects, no community-plugin switch, no Properties panel showing pins as JSON, the brand on the window. What they would lose until it is built: mobile, sync, and the plugin directory as a way to find Oakfall.
 
 Both hosts read and write the same files under the same spec, so a writer can use the app at the desk and Obsidian on the phone on the same folder, and nothing needs converting.
 

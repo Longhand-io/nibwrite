@@ -1,8 +1,8 @@
-# Nibwrite roadmap
+# Oakfall roadmap
 
 > Hand-written public roadmap. The engineering ledger, `docs/PHASES.md`, is the source of truth for delivery state; this page is the narrative. Edit by hand.
 
-Nibwrite is a writing studio for Obsidian: binder, snapshots with side-by-side compare, inspector, corkboard and threads, research, cast, maps, compile, and Nib, the assistant. Everything is stored as Markdown, frontmatter, files, and git commits under an open [vault spec](docs/spec.md). The importer that brings Scrivener projects across, history included, lives in [scrivener-to-obsidian](https://github.com/nibwrite/scrivener-to-obsidian) and has its own roadmap.
+Oakfall is a writing studio for Obsidian: binder, snapshots with side-by-side compare, inspector, corkboard and threads, research, cast, maps, compile, and Nib, the assistant. Everything is stored as Markdown, frontmatter, files, and git commits under an open [vault spec](docs/spec.md). The importer that brings Scrivener projects across, history included, lives in [scrivener-to-obsidian](https://github.com/oakfall/scrivener-to-obsidian) and has its own roadmap.
 
 This is a three-horizon roadmap. Where a thing is designed but not built, this page says so.
 
@@ -18,7 +18,7 @@ This is a three-horizon roadmap. Where a thing is designed but not built, this p
 The first thing a writer can install. Two deliverables, in order:
 
 1. **scriv2obsidian v0.1** (importer repo). Binder parsing, layout and frontmatter, comments and links and images, snapshots replayed into the files store and optionally git, a manifest, an `inspect` command, a synthetic fixture with tests, validation against real projects, signed binaries for macOS, Linux, and Windows.
-2. **Nibwrite plugin v0.1: core plus Snapshots.** The core reads and writes the spec, finds projects, runs the history store with `files` and `git` backends, and loads modules. The Snapshots module is the whole user-facing surface: take a named snapshot, list only this document's snapshots, compare side by side with paragraph, sentence, and word granularity, restore with an automatic snapshot first. Desktop and mobile for the files store; git on desktop.
+2. **Oakfall plugin v0.1: core plus Snapshots.** The core reads and writes the spec, finds projects, runs the history store with `files` and `git` backends, and loads modules. The Snapshots module is the whole user-facing surface: take a named snapshot, list only this document's snapshots, compare side by side with paragraph, sentence, and word granularity, restore with an automatic snapshot first. Desktop and mobile for the files store; git on desktop.
 
 v0.1 ships when a Scrivener refugee can import a project, open it in Obsidian, see their old snapshots in the Snapshots tab, and take a new one.
 
@@ -28,14 +28,14 @@ v0.1 ships when a Scrivener refugee can import a project, open it in Obsidian, s
 - **v0.3 Corkboard.** Grid, kanban columns by status, and label threads in manuscript order, with the story-date axis.
 - **v0.4 Research and Cast.** Attachments pane, PDF highlights linking back, character and setting notes with computed appearances.
 - **v0.5 Map.** Any image as a map, pins to notes, place cards with computed scenes and pinned images.
-- **v0.6 Themes and templates.** The `--nw-` token system exposed, the theme folder format, the template folder format, six starter templates.
+- **v0.6 Themes and templates.** The `--oak-` token system exposed, the theme folder format, the template folder format, six starter templates.
 - **v1.0.** Spec frozen at version 1 with a compatibility promise, the plugin in the Obsidian community list, the importer at 1.0.
 - **Paid, outside this repository, after v1.0:** Nib, the assistant, as the only subscription; compile presets; relief maps. Each is a module against the same core API and stores nothing the open modules cannot read.
 
 ### Non-goals, deliberate
 
 - **No Scrivenings.** Editing several files as one buffer is out of scope. Larger scenes plus the compile preview cover it.
-- **No sync.** iCloud, Dropbox, Obsidian Sync, Syncthing, and git remotes already exist. Nibwrite never moves files between devices.
+- **No sync.** iCloud, Dropbox, Obsidian Sync, Syncthing, and git remotes already exist. Oakfall never moves files between devices.
 - **No database.** State is files, frontmatter, and commits. Nothing lives outside the vault except an optional git directory the plugin keeps out of cloud-synced folders.
 - **No private Obsidian APIs.** Public API only, so an Obsidian update cannot silently break history.
 - **No telemetry, no accounts, no network** from the plugin. Nib is the one module that talks to a model, only to the endpoint the writer chose, only when on.

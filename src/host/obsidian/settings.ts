@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
+// Copyright 2026 0xSpectra LLC and the Oakfall Authors.
 
 // One settings tab, one section per module, one switch each.
 
@@ -7,7 +7,7 @@ import { PluginSettingTab, Setting } from "obsidian";
 import type { App, Plugin } from "obsidian";
 import type { ModuleLoader, ModuleSettings } from "../../core/modules.js";
 
-export class NibwriteSettingTab extends PluginSettingTab {
+export class OakfallSettingTab extends PluginSettingTab {
   constructor(
     app: App,
     plugin: Plugin,

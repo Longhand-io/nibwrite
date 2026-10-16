@@ -1,5 +1,5 @@
 {
-  "name": "nibwrite",
+  "name": "oakfall",
   "version": "0.1.0",
   "description": "The writing studio for Obsidian. Core plus switchable modules; everything stored as Markdown, frontmatter, files, and git commits.",
   "license": "Apache-2.0",

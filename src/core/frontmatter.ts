@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
+// Copyright 2026 0xSpectra LLC and the Oakfall Authors.
 
 // Frontmatter that round-trips. A note's frontmatter is kept as a list of top-level
 // entries, each with its original lines. Reading parses an entry on demand; writing

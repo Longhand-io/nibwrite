@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
+// Copyright 2026 0xSpectra LLC and the Oakfall Authors.
 
 // Counting words the way a writer expects: the body, without frontmatter, comments, or
 // Markdown punctuation, with a hyphenated word as one.

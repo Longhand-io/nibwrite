@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
+// Copyright 2026 0xSpectra LLC and the Oakfall Authors.
 
 // What Nib notices on its own. The lesson from the Office Assistant: speak only on a strong
 // signal, say something specific and true, say it once, and be easy to dismiss. Every nudge

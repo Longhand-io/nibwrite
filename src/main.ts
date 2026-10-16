@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
+// Copyright 2026 0xSpectra LLC and the Oakfall Authors.
 
 // Plugin entry. Builds the Obsidian host, the core, and the module list; the core never
 // sees this file.
@@ -7,7 +7,7 @@
 import { Plugin } from "obsidian";
 import { createCore, ModuleLoader, type ModuleSettings } from "./core/modules.js";
 import { ObsidianHost } from "./host/obsidian/host.js";
-import { NibwriteSettingTab } from "./host/obsidian/settings.js";
+import { OakfallSettingTab } from "./host/obsidian/settings.js";
 import { binderModule } from "./modules/binder/index.js";
 import { inspectorModule } from "./modules/inspector/index.js";
 import { mapModule } from "./modules/map/index.js";
@@ -17,7 +17,7 @@ import { timelineModule } from "./modules/timeline/index.js";
 
 const MODULES = [binderModule, inspectorModule, snapshotsModule, mapModule, timelineModule, nibModule];
 
-export default class NibwritePlugin extends Plugin {
+export default class OakfallPlugin extends Plugin {
   private moduleSettings: ModuleSettings = { enabled: {} };
   private loader: ModuleLoader | null = null;
 
@@ -29,7 +29,7 @@ export default class NibwritePlugin extends Plugin {
     const core = createCore(host);
     this.loader = new ModuleLoader(core, MODULES);
     this.addSettingTab(
-      new NibwriteSettingTab(this.app, this, this.loader, this.moduleSettings, () => this.saveData(this.moduleSettings)),
+      new OakfallSettingTab(this.app, this, this.loader, this.moduleSettings, () => this.saveData(this.moduleSettings)),
     );
     await this.loader.apply(this.moduleSettings);
   }

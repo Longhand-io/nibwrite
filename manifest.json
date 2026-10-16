@@ -1,10 +1,10 @@
 {
-  "id": "nibwrite",
-  "name": "Nibwrite",
+  "id": "oakfall",
+  "name": "Oakfall",
   "version": "0.1.0",
   "minAppVersion": "1.5.0",
   "description": "The writing studio for Obsidian: binder, snapshots, inspector, corkboard, maps. Everything stays as Markdown, frontmatter, and files.",
-  "author": "0xSpectra LLC and the Nibwrite Authors",
-  "authorUrl": "https://nibwrite.github.io/nibwrite-site/",
+  "author": "0xSpectra LLC and the Oakfall Authors",
+  "authorUrl": "https://oakfall.github.io/oakfall-site/",
   "isDesktopOnly": false
 }

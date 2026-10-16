@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
+// Copyright 2026 0xSpectra LLC and the Oakfall Authors.
 
 // The Obsidian host. The only place outside this folder's siblings that imports `obsidian`.
 
@@ -225,7 +225,7 @@ export class ObsidianHost implements Host {
       try {
         slot.handle = overlay.mount(el);
       } catch (err) {
-        console.error("[nibwrite] overlay", overlay.id, err);
+        console.error("[oakfall] overlay", overlay.id, err);
       }
     });
   }
@@ -325,7 +325,7 @@ class HostView extends ItemView {
   }
 
   override getDisplayText(): string {
-    return this.state.path ? this.factory.title(this.state) : "Nibwrite";
+    return this.state.path ? this.factory.title(this.state) : "Oakfall";
   }
 
   override getIcon(): string {

@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
+// Copyright 2026 0xSpectra LLC and the Oakfall Authors.
 
 // The binder's data: a project's documents as a tree in binder order, with word counts, and
 // the plan for moving a sibling: renames when the folder is numbered, `order` fields when it

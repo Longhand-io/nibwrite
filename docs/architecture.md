@@ -7,7 +7,7 @@
 3. **Modular by design.** The plugin is a small core plus feature modules that depend only on the core API and the spec. Modules can ship, be disabled, or be licensed independently.
 4. **Secure by design.** No third-party runtime dependencies in the importer. No network access anywhere. Git is invoked as an argv array, never through a shell string. Paths derived from user content are sanitised and confined to the output directory. Nothing executes content from the vault.
 5. **Boring technology.** Go standard library for the importer. TypeScript with the Obsidian API for the plugin. Git as the version store. Pandoc is optional, only for compile targets that need it.
-6. **Host-agnostic modules.** Obsidian is the first host, not the only one. Modules never import the Obsidian API directly; they talk to a small host interface (read and write files, watch the vault, open a document at a line, register a view and a command, show a settings section) that the Obsidian adapter implements today. A standalone Nibwrite application implements the same interface later and runs the same modules unchanged. The spec makes the files portable; this rule makes the code portable.
+6. **Host-agnostic modules.** Obsidian is the first host, not the only one. Modules never import the Obsidian API directly; they talk to a small host interface (read and write files, watch the vault, open a document at a line, register a view and a command, show a settings section) that the Obsidian adapter implements today. A standalone Oakfall application implements the same interface later and runs the same modules unchanged. The spec makes the files portable; this rule makes the code portable.
 
 ## Components
 
@@ -79,15 +79,15 @@ The spec, the importer, and the core plus every vault module are open source und
 
 Two ideas are worth recording so the module boundary is drawn with them in mind. Neither is in scope for v0.1.
 
-**Nib, the assistant.** An in-vault helper that knows the manuscript: what changed since a snapshot, which threads a chapter carries, where a character was last seen, what depends on a passage about to be cut, whether a synopsis still matches its scene. It is a module like any other, reading only through the spec and the history store, with three hard rules that keep the security posture intact: off by default; network access only to the endpoint the writer chose, which is Nibwrite's hosted models under a subscription, the writer's own key, or a local model; and every action it takes lands as an ordinary edit or snapshot the writer can see and undo. Nib is the only subscription in Nibwrite. It has its own icon, the nib, and its own voice rules in the brand kit, so nobody mistakes it for Nibwrite itself.
+**Nib, the assistant.** An in-vault helper that knows the manuscript: what changed since a snapshot, which threads a chapter carries, where a character was last seen, what depends on a passage about to be cut, whether a synopsis still matches its scene. It is a module like any other, reading only through the spec and the history store, with three hard rules that keep the security posture intact: off by default; network access only to the endpoint the writer chose, which is Oakfall's hosted models under a subscription, the writer's own key, or a local model; and every action it takes lands as an ordinary edit or snapshot the writer can see and undo. Nib is the only subscription in Oakfall. It has its own icon, the nib, and its own voice rules in the brand kit, so nobody mistakes it for Oakfall itself.
 
-**Themes and templates.** Open formats, documented in `theming.md`. Every panel is drawn from `--nw-` tokens; a theme is a folder with a tokens file and optional scoped CSS; a template is a starter project with a manifest. Both are presentation or starting content only and never change what is stored.
+**Themes and templates.** Open formats, documented in `theming.md`. Every panel is drawn from `--oak-` tokens; a theme is a folder with a tokens file and optional scoped CSS; a template is a starter project with a manifest. Both are presentation or starting content only and never change what is stored.
 
 **Relief maps.** The map module treats any image as a map with pins. Obsidian views are Chromium, so WebGL is available to a plugin on desktop, and a heightmap PNG, a glTF model, or an export from a map generator can render as a navigable world with the same pins linking to notes. The spec already carries the `relief` field so flat and relief readers share one note. This is the one place a rendering library is justified, and it stays isolated inside the module so the core is dependency-free. Desktop only; the flat map is the fallback.
 
 ## Compatibility
 
-- **Spec versioning.** Every `_Project.md` carries `nibwrite: 1`. Readers accept lower versions and migrate on write. Unknown fields are preserved verbatim.
+- **Spec versioning.** Every `_Project.md` carries `oakfall: 1`. Readers accept lower versions and migrate on write. Unknown fields are preserved verbatim.
 - **Git independence.** Snapshot commits are ordinary commits with a message convention. `git log --grep` finds them without the plugin.
 - **Importer stability.** Output layout and frontmatter are covered by golden-file tests. Changing them is a spec bump.
 - **Obsidian API drift.** The plugin uses public API only. No private-API tricks, which is the failure mode of some existing history plugins.

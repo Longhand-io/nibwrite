@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
+// Copyright 2026 0xSpectra LLC and the Oakfall Authors.
 
 import assert from "node:assert/strict";
 import { test } from "node:test";
@@ -14,7 +14,7 @@ const doc = (id: string, title: string, body = "", extra: { [k: string]: string 
 
 function vault(): MemoryHost {
   return new MemoryHost({
-    "Novel/_Project.md": '---\nnibwrite: 1\ntitle: "Harrowmere"\n---\n',
+    "Novel/_Project.md": '---\noakfall: 1\ntitle: "Harrowmere"\n---\n',
     "Novel/Manuscript/01 Part One/01 Part One.md": note({ id: "P1", type: "folder", title: "Part One" }, "Part One begins here.\n"),
     "Novel/Manuscript/01 Part One/01 The House.md": doc("C1", "The House", "one two three four", { status: "Revised", label: "Mara" }),
     "Novel/Manuscript/01 Part One/02 The Tin.md": doc("C2", "The Tin", "five six"),

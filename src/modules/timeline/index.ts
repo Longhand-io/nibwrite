@@ -1,12 +1,12 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
+// Copyright 2026 0xSpectra LLC and the Oakfall Authors.
 
 // The timeline module: the story-date axis for a project.
 
 import type { Core, Module } from "../../core/modules.js";
 import { mountTimelineView } from "./view.js";
 
-export const TIMELINE_VIEW = "nibwrite-timeline";
+export const TIMELINE_VIEW = "oakfall-timeline";
 
 export const timelineModule: Module = {
   id: "timeline",

@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
+// Copyright 2026 0xSpectra LLC and the Oakfall Authors.
 
 import assert from "node:assert/strict";
 import { test } from "node:test";
@@ -15,7 +15,7 @@ const WHEN = new Date(Date.UTC(2026, 9, 8, 3, 14, 15));
 
 function vault(): MemoryHost {
   return new MemoryHost({
-    "Novel/_Project.md": "---\nnibwrite: 1\n---\n",
+    "Novel/_Project.md": "---\noakfall: 1\n---\n",
     "Novel/Draft/02 The Tin.md": note({ id: "C2", type: "text", title: "The Tin" }, "Under the stair.\n"),
     "Novel/Draft/03 No id.md": "Just text.\n",
     "Novel/_snapshots/C2/2020-01-20T04-27-36Z First Draft.md": note({ id: "C2", type: "text" }, "Older.\n"),

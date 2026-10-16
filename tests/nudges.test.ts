@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
+// Copyright 2026 0xSpectra LLC and the Oakfall Authors.
 
 import assert from "node:assert/strict";
 import { test } from "node:test";
@@ -9,7 +9,7 @@ import { nudgesFor } from "../src/modules/nib/nudges.js";
 
 function vault(): MemoryHost {
   return new MemoryHost({
-    "Novel/_Project.md": "---\nnibwrite: 1\n---\n",
+    "Novel/_Project.md": "---\noakfall: 1\n---\n",
     "Novel/Manuscript/01 The Letter.md": '---\nid: "C1"\ntype: "text"\ntitle: "The Letter"\n---\nShe read it twice at [[Stillwater]].\n',
     "Novel/Manuscript/02 Empty.md": '---\nid: "C2"\ntype: "text"\ntitle: "Empty"\n---\n',
     "Novel/Research/Stillwater.md": '---\nid: "S1"\ntype: "setting"\ntitle: "Stillwater"\n---\n',

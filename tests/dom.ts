@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
+// Copyright 2026 0xSpectra LLC and the Oakfall Authors.
 
 // The least DOM a view needs to mount in a test: elements that keep their children, classes,
 // and listeners, and can be clicked. No layout, no selectors; a test finds what it wants by

@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
+// Copyright 2026 0xSpectra LLC and the Oakfall Authors.
 
 import assert from "node:assert/strict";
 import { test } from "node:test";
@@ -44,7 +44,7 @@ test("ticks: years for a long span, months for a season, days for a fortnight", 
 
 function vault(): MemoryHost {
   return new MemoryHost({
-    "Novel/_Project.md": '---\nnibwrite: 1\ntitle: "Harrowmere"\nlabels: ["Red", "Blue", "Green"]\n---\n',
+    "Novel/_Project.md": '---\noakfall: 1\ntitle: "Harrowmere"\nlabels: ["Red", "Blue", "Green"]\n---\n',
     "Novel/Manuscript/01 The Letter.md": '---\nid: "C1"\ntype: "text"\ntitle: "The Letter"\ndate: "1897-04-12"\nlabel: "Red"\ncreated: "2021-05-22T19:12:38-07:00"\nsynopsis: "Mara finds the letter."\n---\n',
     "Novel/Manuscript/02 The Tin.md": '---\nid: "C2"\ntype: "text"\ntitle: "The Tin"\ndate: "1897-04"\nlabel: "Red"\ncreated: "2021-06-01T10:00:00-07:00"\n---\n',
     "Novel/Manuscript/03 Winter Fair.md": '---\nid: "C3"\ntype: "text"\ntitle: "Winter Fair"\ndate: "1897-12-20"\ndate_end: "1897-12-22"\nlabel: "Blue"\n---\n',
@@ -106,10 +106,10 @@ test("module registers a project-level view, a command, a ribbon, and a project-
   const host = vault();
   const core = createCore(host);
   await timelineModule.register(core);
-  assert.ok(host.views.has("nibwrite-timeline"));
+  assert.ok(host.views.has("oakfall-timeline"));
   host.active = "Novel/Manuscript/01 The Letter.md";
   await host.commands.get("timeline-open")!.run();
-  assert.deepEqual(host.openedViews[0], { type: "nibwrite-timeline", state: { path: "Novel/_Project.md" } });
+  assert.deepEqual(host.openedViews[0], { type: "oakfall-timeline", state: { path: "Novel/_Project.md" } });
   const menu = host.fileMenu.find((m) => m.label === "Open timeline")!;
   assert.equal(menu.check("Novel/_Project.md"), true);
   assert.equal(menu.check("Novel/Manuscript/01 The Letter.md"), false);
@@ -117,7 +117,7 @@ test("module registers a project-level view, a command, a ribbon, and a project-
 
 test("a custom calendar: its own months, year length, and era, read and written at the note's precision", async () => {
   const host = new MemoryHost({
-    "Saga/_Project.md": '---\nnibwrite: 1\ntitle: "Saga"\ncalendar:\n  kind: "custom"\n  months: ["Thaw", "Sowing", "Harvest", "Frost"]\n  days_per_month: 40\n  era: "AE"\n---\n',
+    "Saga/_Project.md": '---\noakfall: 1\ntitle: "Saga"\ncalendar:\n  kind: "custom"\n  months: ["Thaw", "Sowing", "Harvest", "Frost"]\n  days_per_month: 40\n  era: "AE"\n---\n',
     "Saga/Manuscript/01 Ice.md": '---\nid: "A1"\ntype: "text"\ntitle: "Ice"\ndate: "412-Thaw-3"\n---\n',
     "Saga/Manuscript/02 Seed.md": '---\nid: "A2"\ntype: "text"\ntitle: "Seed"\ndate: "412-2"\n---\n',
     "Saga/Manuscript/03 Cold.md": '---\nid: "A3"\ntype: "text"\ntitle: "Cold"\ndate: "413"\n---\n',
@@ -141,7 +141,7 @@ test("a custom calendar: its own months, year length, and era, read and written 
 
 test("a counting calendar: Day 12, plain numbers, and ticks in units", async () => {
   const host = new MemoryHost({
-    "Voyage/_Project.md": '---\nnibwrite: 1\ncalendar:\n  kind: "count"\n  unit: "Day"\n---\n',
+    "Voyage/_Project.md": '---\noakfall: 1\ncalendar:\n  kind: "count"\n  unit: "Day"\n---\n',
     "Voyage/Manuscript/01 Cast off.md": '---\nid: "V1"\ntype: "text"\ntitle: "Cast off"\ndate: "Day 1"\n---\n',
     "Voyage/Manuscript/02 Storm.md": '---\nid: "V2"\ntype: "text"\ntitle: "Storm"\ndate: 40\n---\n',
   });
@@ -170,7 +170,7 @@ test("dragging a card to another thread writes only the label; the unlabelled la
 
 test("parts span their dated scenes", async () => {
   const host = new MemoryHost({
-    "Novel/_Project.md": '---\nnibwrite: 1\ntitle: "N"\n---\n',
+    "Novel/_Project.md": '---\noakfall: 1\ntitle: "N"\n---\n',
     "Novel/Manuscript/01 Part One/01 A.md": '---\nid: "a"\ntype: "text"\ntitle: "A"\ndate: "1897-01-10"\n---\n',
     "Novel/Manuscript/01 Part One/02 B.md": '---\nid: "b"\ntype: "text"\ntitle: "B"\ndate: "1897-03-01"\ndate_end: "1897-03-05"\n---\n',
     "Novel/Manuscript/02 Part Two/01 C.md": '---\nid: "c"\ntype: "text"\ntitle: "C"\ndate: "1898"\n---\n',

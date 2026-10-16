@@ -1,41 +1,41 @@
-/* Nibwrite. Apache-2.0. Every panel draws from --nw- tokens; a theme overrides them on .lh-root. */
+/* Oakfall. Apache-2.0. Every panel draws from --oak- tokens; a theme overrides them on .lh-root. */
 
 .lh-root {
-  --nw-paper: #f3f4f1;
-  --nw-paper-deep: #e9ebe6;
-  --nw-ink: #1e2432;
-  --nw-graphite: #676b72;
-  --nw-rule: #cfd2cc;
-  --nw-removed: #a8322b;
-  --nw-added: #2f6f4e;
-  --nw-added-wash: #dcebe2;
-  --nw-removed-wash: #f4dedc;
-  --nw-font-body: "Newsreader", Georgia, "Times New Roman", serif;
-  --nw-font-ui: var(--font-interface, system-ui, sans-serif);
-  --nw-card-radius: 2px;
-  --nw-card: #fbfbf9;
+  --oak-paper: #f3f4f1;
+  --oak-paper-deep: #e9ebe6;
+  --oak-ink: #1e2432;
+  --oak-graphite: #676b72;
+  --oak-rule: #cfd2cc;
+  --oak-removed: #a8322b;
+  --oak-added: #2f6f4e;
+  --oak-added-wash: #dcebe2;
+  --oak-removed-wash: #f4dedc;
+  --oak-font-body: "Newsreader", Georgia, "Times New Roman", serif;
+  --oak-font-ui: var(--font-interface, system-ui, sans-serif);
+  --oak-card-radius: 2px;
+  --oak-card: #fbfbf9;
   /* named inks for drawn shapes; a theme may retune them */
-  --nw-color-ink: var(--nw-ink);
-  --nw-color-graphite: var(--nw-graphite);
-  --nw-color-red: #b65a52;
-  --nw-color-blue: #4c6a9a;
-  --nw-color-green: #5e8a5c;
-  --nw-color-yellow: #c9a24a;
-  --nw-color-sea: #6f8c9c;
-  --nw-color-moss: #7e9a6b;
-  color: var(--nw-ink);
-  font-family: var(--nw-font-ui);
+  --oak-color-ink: var(--oak-ink);
+  --oak-color-graphite: var(--oak-graphite);
+  --oak-color-red: #b65a52;
+  --oak-color-blue: #4c6a9a;
+  --oak-color-green: #5e8a5c;
+  --oak-color-yellow: #c9a24a;
+  --oak-color-sea: #6f8c9c;
+  --oak-color-moss: #7e9a6b;
+  color: var(--oak-ink);
+  font-family: var(--oak-font-ui);
 }
 
 .theme-dark .lh-root {
-  --nw-card: #262d3b;
-  --nw-paper: #1e2432;
-  --nw-paper-deep: #171c27;
-  --nw-ink: #f3f4f1;
-  --nw-graphite: #a5a9b0;
-  --nw-rule: #3a4150;
-  --nw-added-wash: #27402f;
-  --nw-removed-wash: #4a2a27;
+  --oak-card: #262d3b;
+  --oak-paper: #1e2432;
+  --oak-paper-deep: #171c27;
+  --oak-ink: #f3f4f1;
+  --oak-graphite: #a5a9b0;
+  --oak-rule: #3a4150;
+  --oak-added-wash: #27402f;
+  --oak-removed-wash: #4a2a27;
 }
 
 /* ---- map ---- */
@@ -44,7 +44,7 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  background: var(--nw-paper-deep);
+  background: var(--oak-paper-deep);
 }
 
 .lh-map-toolbar {
@@ -53,12 +53,12 @@
   align-items: baseline;
   gap: 0.25rem 1rem;
   padding: 0.6rem 1rem;
-  border-bottom: 1px solid var(--nw-rule);
-  background: var(--nw-paper);
+  border-bottom: 1px solid var(--oak-rule);
+  background: var(--oak-paper);
 }
 
 .lh-map-title {
-  font-family: var(--nw-font-body);
+  font-family: var(--oak-font-body);
   font-size: 1.15rem;
   font-weight: 500;
   letter-spacing: -0.01em;
@@ -66,7 +66,7 @@
 
 .lh-map-hint {
   flex: 1;
-  color: var(--nw-graphite);
+  color: var(--oak-graphite);
   font-size: 0.8rem;
 }
 
@@ -86,19 +86,19 @@
   width: 100%;
   max-width: 100%;
   aspect-ratio: 16 / 10;
-  background: var(--nw-paper);
-  border: 1px solid var(--nw-rule);
-  border-radius: var(--nw-card-radius);
+  background: var(--oak-paper);
+  border: 1px solid var(--oak-rule);
+  border-radius: var(--oak-card-radius);
   overflow: visible;
   user-select: none;
   touch-action: none;
 }
 
 .lh-map-stage.lh-map-blank {
-  background-color: var(--nw-paper);
+  background-color: var(--oak-paper);
   background-image:
-    linear-gradient(var(--nw-rule) 1px, transparent 1px),
-    linear-gradient(90deg, var(--nw-rule) 1px, transparent 1px);
+    linear-gradient(var(--oak-rule) 1px, transparent 1px),
+    linear-gradient(90deg, var(--oak-rule) 1px, transparent 1px);
   background-size: 10% 10%;
 }
 
@@ -107,7 +107,7 @@
   width: 100%;
   height: 100%;
   object-fit: fill;
-  border-radius: var(--nw-card-radius);
+  border-radius: var(--oak-card-radius);
   pointer-events: none;
 }
 
@@ -116,7 +116,7 @@
   inset: 0;
   display: grid;
   place-items: center;
-  color: var(--nw-removed);
+  color: var(--oak-removed);
   font-size: 0.9rem;
   padding: 1rem;
   text-align: center;
@@ -136,39 +136,39 @@
   bottom: -0.3rem;
   width: 0.6rem;
   height: 0.6rem;
-  background: var(--nw-ink);
+  background: var(--oak-ink);
   border-radius: 50%;
   transform: translateX(-50%);
-  box-shadow: 0 0 0 2px var(--nw-paper);
+  box-shadow: 0 0 0 2px var(--oak-paper);
 }
 
 .lh-map-pin-unresolved::after {
-  background: var(--nw-removed);
+  background: var(--oak-removed);
 }
 
 .lh-map-tag {
   display: block;
   margin-bottom: 0.45rem;
   padding: 0.15rem 0.5rem;
-  font-family: var(--nw-font-body);
+  font-family: var(--oak-font-body);
   font-size: 0.85rem;
   line-height: 1.3;
   white-space: nowrap;
-  color: var(--nw-ink);
-  background: var(--nw-paper);
-  border: 1px solid var(--nw-ink);
-  border-radius: var(--nw-card-radius);
+  color: var(--oak-ink);
+  background: var(--oak-paper);
+  border: 1px solid var(--oak-ink);
+  border-radius: var(--oak-card-radius);
 }
 
 .lh-map-pin-unresolved .lh-map-tag {
   border-style: dashed;
-  color: var(--nw-graphite);
+  color: var(--oak-graphite);
 }
 
 .lh-map-pin:hover .lh-map-tag,
 .lh-map-pin:focus-visible .lh-map-tag {
-  background: var(--nw-ink);
-  color: var(--nw-paper);
+  background: var(--oak-ink);
+  color: var(--oak-paper);
 }
 
 .lh-map-pin-dragging {
@@ -208,9 +208,9 @@
   max-height: calc(100% - 16px);
   overflow-y: auto;
   overscroll-behavior: contain;
-  background: var(--nw-paper);
-  color: var(--nw-ink);
-  border: 1px solid var(--nw-rule);
+  background: var(--oak-paper);
+  color: var(--oak-ink);
+  border: 1px solid var(--oak-rule);
   box-shadow: 0 6px 18px rgba(30, 36, 50, 0.12);
   font-size: 0.85rem;
   cursor: default;
@@ -226,16 +226,16 @@
   top: 0;
   z-index: 1;
   padding: 0.7rem 0.9rem 0.5rem;
-  background: var(--nw-paper);
-  border-bottom: 1px solid var(--nw-rule);
+  background: var(--oak-paper);
+  border-bottom: 1px solid var(--oak-rule);
 }
 
 .lh-map-card-name {
   display: block;
-  font-family: var(--nw-font-body);
+  font-family: var(--oak-font-body);
   font-size: 1.05rem;
   font-weight: 600;
-  color: var(--nw-ink);
+  color: var(--oak-ink);
   text-decoration: none;
 }
 
@@ -245,7 +245,7 @@
 
 .lh-map-card-meta {
   display: block;
-  color: var(--nw-graphite);
+  color: var(--oak-graphite);
   font-size: 0.78rem;
 }
 
@@ -254,9 +254,9 @@
   box-sizing: border-box;
   margin: 0.55rem 0 0;
   padding: 0.3rem 0.5rem;
-  border: 1px solid var(--nw-rule);
-  background: var(--nw-paper-deep);
-  color: var(--nw-ink);
+  border: 1px solid var(--oak-rule);
+  background: var(--oak-paper-deep);
+  color: var(--oak-ink);
   font: inherit;
   font-size: 0.85rem;
 }
@@ -284,24 +284,24 @@
   width: 100%;
   height: 3.4rem;
   object-fit: cover;
-  border: 1px solid var(--nw-rule);
-  border-radius: var(--nw-card-radius);
-  background: var(--nw-paper-deep);
+  border: 1px solid var(--oak-rule);
+  border-radius: var(--oak-card-radius);
+  background: var(--oak-paper-deep);
 }
 
 .lh-map-card-note {
   display: grid;
   place-items: center;
-  color: var(--nw-graphite);
+  color: var(--oak-graphite);
   font-size: 0.7rem;
-  background: repeating-linear-gradient(var(--nw-paper) 0 0.35rem, var(--nw-rule) 0.35rem 0.38rem);
+  background: repeating-linear-gradient(var(--oak-paper) 0 0.35rem, var(--oak-rule) 0.35rem 0.38rem);
 }
 
 .lh-map-card-attachments figcaption {
   margin-top: 0.2rem;
   font-size: 0.7rem;
   line-height: 1.2;
-  color: var(--nw-graphite);
+  color: var(--oak-graphite);
 }
 
 .lh-map-card-scenes {
@@ -312,7 +312,7 @@
 
 .lh-map-card-scenes li {
   padding: 0.45rem 0;
-  border-top: 1px solid var(--nw-rule);
+  border-top: 1px solid var(--oak-rule);
   cursor: pointer;
 }
 
@@ -326,7 +326,7 @@
 }
 
 .lh-map-card-chapter {
-  color: var(--nw-graphite);
+  color: var(--oak-graphite);
   font-size: 0.75rem;
 }
 
@@ -335,24 +335,24 @@
 }
 
 .lh-map-card-excerpt {
-  color: var(--nw-graphite);
-  font-family: var(--nw-font-body);
+  color: var(--oak-graphite);
+  font-family: var(--oak-font-body);
   font-size: 0.85rem;
 }
 
 .lh-map-card-excerpt mark {
-  background: var(--nw-added-wash, #dcebe2);
+  background: var(--oak-added-wash, #dcebe2);
   color: inherit;
 }
 
 .lh-map-card-none {
   padding: 0.5rem 0.9rem 0.7rem;
-  color: var(--nw-graphite);
+  color: var(--oak-graphite);
 }
 
 .lh-map-pin-open .lh-map-tag {
-  background: var(--nw-ink);
-  color: var(--nw-paper);
+  background: var(--oak-ink);
+  color: var(--oak-paper);
 }
 
 /* ---- drawing layer ---- */
@@ -364,9 +364,9 @@
   align-items: center;
   gap: 0.35rem;
   padding: 0.4rem 1rem;
-  border-bottom: 1px solid var(--nw-rule);
-  background: var(--nw-paper);
-  background: var(--nw-paper-deep);
+  border-bottom: 1px solid var(--oak-rule);
+  background: var(--oak-paper);
+  background: var(--oak-paper-deep);
 }
 
 
@@ -380,10 +380,10 @@
   padding: 0.2rem 0.6rem;
   font: inherit;
   font-size: 0.8rem;
-  color: var(--nw-ink);
-  background: var(--nw-paper);
-  border: 1px solid var(--nw-rule);
-  border-radius: var(--nw-card-radius);
+  color: var(--oak-ink);
+  background: var(--oak-paper);
+  border: 1px solid var(--oak-rule);
+  border-radius: var(--oak-card-radius);
   cursor: pointer;
   cursor: text;
   min-width: 12rem;
@@ -393,14 +393,14 @@
 .lh-map-tool:hover,
 .lh-root button.lh-button:hover,
 .lh-map-style:hover {
-  border-color: var(--nw-ink);
+  border-color: var(--oak-ink);
 }
 
 .lh-map-tool-active,
 .lh-root button.lh-button.lh-active {
-  background: var(--nw-ink);
-  color: var(--nw-paper);
-  border-color: var(--nw-ink);
+  background: var(--oak-ink);
+  color: var(--oak-paper);
+  border-color: var(--oak-ink);
 }
 
 .lh-map-tool:disabled {
@@ -409,8 +409,8 @@
 }
 
 .lh-map-tool-danger:hover {
-  border-color: var(--nw-removed);
-  color: var(--nw-removed);
+  border-color: var(--oak-removed);
+  color: var(--oak-removed);
 }
 
 .lh-draw {
@@ -420,7 +420,7 @@
   height: 100%;
   overflow: visible;
   pointer-events: none;
-  font-family: var(--nw-font-body);
+  font-family: var(--oak-font-body);
 }
 
 .lh-draw-active {
@@ -454,23 +454,23 @@
 }
 
 .lh-shape-label {
-  fill: var(--nw-graphite);
+  fill: var(--oak-graphite);
   letter-spacing: 0.08em;
   pointer-events: none;
   paint-order: stroke;
-  stroke: var(--nw-paper);
+  stroke: var(--oak-paper);
   stroke-width: 4px;
   stroke-linejoin: round;
 }
 
 .lh-shape-text {
-  fill: var(--nw-ink);
+  fill: var(--oak-ink);
   font-style: italic;
   pointer-events: all;
 }
 
 .lh-shape-linked .lh-shape-label {
-  fill: var(--nw-ink);
+  fill: var(--oak-ink);
   text-decoration: underline dotted;
 }
 
@@ -481,7 +481,7 @@
 
 .lh-draw-selection {
   fill: none;
-  stroke: var(--nw-ink);
+  stroke: var(--oak-ink);
   stroke-width: 1px;
   stroke-dasharray: 4 3;
   vector-effect: non-scaling-stroke;
@@ -489,8 +489,8 @@
 }
 
 .lh-draw-handle {
-  fill: var(--nw-paper);
-  stroke: var(--nw-ink);
+  fill: var(--oak-paper);
+  stroke: var(--oak-ink);
   stroke-width: 1.5px;
   vector-effect: non-scaling-stroke;
   pointer-events: all;
@@ -498,7 +498,7 @@
 }
 
 .theme-dark .lh-shape-label {
-  stroke: var(--nw-paper);
+  stroke: var(--oak-paper);
 }
 
 /* ---- icon toolbar ---- */
@@ -527,7 +527,7 @@
   width: 1px;
   height: 1.4rem;
   margin: 0 0.3rem;
-  background: var(--nw-rule);
+  background: var(--oak-rule);
 }
 
 .lh-map-swatches {
@@ -542,7 +542,7 @@
   height: 1.15rem;
   min-width: 0;
   padding: 0;
-  border: 1px solid var(--nw-rule);
+  border: 1px solid var(--oak-rule);
   border-radius: 50%;
   background-color: var(--swatch, transparent);
   background-image: none;
@@ -552,15 +552,15 @@
 
 .lh-root button.lh-map-swatch-none {
   background-color: transparent;
-  background-image: linear-gradient(135deg, transparent 45%, var(--nw-graphite) 45%, var(--nw-graphite) 55%, transparent 55%);
+  background-image: linear-gradient(135deg, transparent 45%, var(--oak-graphite) 45%, var(--oak-graphite) 55%, transparent 55%);
 }
 
 .lh-root button.lh-map-swatch:hover {
-  border-color: var(--nw-ink);
+  border-color: var(--oak-ink);
 }
 
 .lh-root button.lh-map-swatch-active {
-  box-shadow: 0 0 0 2px var(--nw-paper), 0 0 0 3.5px var(--nw-ink);
+  box-shadow: 0 0 0 2px var(--oak-paper), 0 0 0 3.5px var(--oak-ink);
 }
 
 /* ---- Nib ---- */
@@ -569,7 +569,7 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  background: var(--nw-paper);
+  background: var(--oak-paper);
 }
 
 .lh-nib-head {
@@ -577,7 +577,7 @@
   align-items: center;
   gap: 0.7rem;
   padding: 0.8rem 1rem 0.6rem;
-  border-bottom: 1px solid var(--nw-rule);
+  border-bottom: 1px solid var(--oak-rule);
   flex-wrap: wrap;
 }
 
@@ -587,30 +587,30 @@
   width: 2.4rem;
   height: 2.4rem;
   border-radius: 0.55rem;
-  background: var(--nw-ink);
-  color: var(--nw-paper);
+  background: var(--oak-ink);
+  color: var(--oak-paper);
 }
 
 .lh-nib-mark svg {
   width: 1.7rem;
   height: 1.7rem;
-  color: var(--nw-paper);
+  color: var(--oak-paper);
 }
 
 .lh-nib-mark svg circle,
 .lh-nib-mark svg line {
-  stroke: var(--nw-ink);
-  fill: var(--nw-ink);
+  stroke: var(--oak-ink);
+  fill: var(--oak-ink);
 }
 
 .lh-nib-title {
-  font-family: var(--nw-font-body);
+  font-family: var(--oak-font-body);
   font-size: 1.15rem;
   font-weight: 600;
 }
 
 .lh-nib-sub {
-  color: var(--nw-graphite);
+  color: var(--oak-graphite);
   font-size: 0.78rem;
 }
 
@@ -627,9 +627,9 @@
   align-self: flex-end;
   max-width: 85%;
   padding: 0.4rem 0.7rem;
-  border: 1px solid var(--nw-rule);
+  border: 1px solid var(--oak-rule);
   border-radius: 0.6rem 0.6rem 0.15rem 0.6rem;
-  background: var(--nw-paper-deep);
+  background: var(--oak-paper-deep);
   font-size: 0.9rem;
 }
 
@@ -637,9 +637,9 @@
   align-self: flex-start;
   max-width: 95%;
   padding: 0.55rem 0.8rem;
-  border: 1px solid var(--nw-ink);
+  border: 1px solid var(--oak-ink);
   border-radius: 0.6rem 0.6rem 0.6rem 0.15rem;
-  font-family: var(--nw-font-body);
+  font-family: var(--oak-font-body);
   font-size: 0.95rem;
   line-height: 1.45;
 }
@@ -653,7 +653,7 @@
 }
 
 .lh-nib-thinking {
-  color: var(--nw-graphite);
+  color: var(--oak-graphite);
   border-style: dashed;
 }
 
@@ -661,12 +661,12 @@
   list-style: none;
   margin: 0.5rem 0 0;
   padding: 0;
-  font-family: var(--nw-font-ui);
+  font-family: var(--oak-font-ui);
 }
 
 .lh-nib-cites li {
   padding: 0.35rem 0;
-  border-top: 1px solid var(--nw-rule);
+  border-top: 1px solid var(--oak-rule);
   cursor: pointer;
 }
 
@@ -679,7 +679,7 @@
 
 .lh-nib-cite-detail {
   display: block;
-  color: var(--nw-graphite);
+  color: var(--oak-graphite);
   font-size: 0.8rem;
 }
 
@@ -688,7 +688,7 @@
   flex-wrap: wrap;
   gap: 0.35rem;
   padding: 0.4rem 1rem;
-  border-top: 1px solid var(--nw-rule);
+  border-top: 1px solid var(--oak-rule);
 }
 
 .lh-root button.lh-nib-chip,
@@ -696,9 +696,9 @@
   padding: 0.2rem 0.6rem;
   font: inherit;
   font-size: 0.78rem;
-  color: var(--nw-ink);
-  background: var(--nw-paper);
-  border: 1px solid var(--nw-rule);
+  color: var(--oak-ink);
+  background: var(--oak-paper);
+  border: 1px solid var(--oak-rule);
   border-radius: 999px;
   box-shadow: none;
   cursor: pointer;
@@ -706,7 +706,7 @@
 
 .lh-root button.lh-nib-chip:hover,
 .lh-root button.lh-chip:hover {
-  border-color: var(--nw-ink);
+  border-color: var(--oak-ink);
 }
 
 .lh-nib-form {
@@ -719,24 +719,24 @@
   flex: 1;
   padding: 0.4rem 0.6rem;
   font: inherit;
-  color: var(--nw-ink);
-  background: var(--nw-paper);
-  border: 1px solid var(--nw-rule);
-  border-radius: var(--nw-card-radius);
+  color: var(--oak-ink);
+  background: var(--oak-paper);
+  border: 1px solid var(--oak-rule);
+  border-radius: var(--oak-card-radius);
 }
 
 .lh-nib-form input:focus {
-  outline: 2px solid var(--nw-ink);
+  outline: 2px solid var(--oak-ink);
   outline-offset: 1px;
 }
 
 .lh-root .lh-nib-form button {
   padding: 0.4rem 0.8rem;
   font: inherit;
-  color: var(--nw-paper);
-  background: var(--nw-ink);
-  border: 1px solid var(--nw-ink);
-  border-radius: var(--nw-card-radius);
+  color: var(--oak-paper);
+  background: var(--oak-ink);
+  border: 1px solid var(--oak-ink);
+  border-radius: var(--oak-card-radius);
   box-shadow: none;
   cursor: pointer;
 }
@@ -784,12 +784,12 @@
   width: 19rem;
   max-width: calc(100vw - 3rem);
   padding: 0.7rem 0.8rem 0.6rem;
-  border: 1px solid var(--nw-ink);
+  border: 1px solid var(--oak-ink);
   border-radius: 0.6rem 0.6rem 0.15rem 0.6rem;
-  background: var(--nw-paper);
-  color: var(--nw-ink);
+  background: var(--oak-paper);
+  color: var(--oak-ink);
   box-shadow: 0 8px 24px rgba(30, 36, 50, 0.2);
-  font-family: var(--nw-font-body);
+  font-family: var(--oak-font-body);
   font-size: 0.92rem;
   line-height: 1.4;
 }
@@ -801,9 +801,9 @@
   bottom: -0.45rem;
   width: 0.8rem;
   height: 0.8rem;
-  background: var(--nw-paper);
-  border-right: 1px solid var(--nw-ink);
-  border-bottom: 1px solid var(--nw-ink);
+  background: var(--oak-paper);
+  border-right: 1px solid var(--oak-ink);
+  border-bottom: 1px solid var(--oak-ink);
   transform: rotate(45deg);
 }
 
@@ -903,7 +903,7 @@
   padding: 0.1rem 0.5rem;
   font: inherit;
   font-size: 0.72rem;
-  color: var(--nw-graphite);
+  color: var(--oak-graphite);
   background: transparent;
   border: 0;
   box-shadow: none;
@@ -937,7 +937,7 @@
 }
 
 .lh-root button.lh-nib-action {
-  border-color: var(--nw-ink);
+  border-color: var(--oak-ink);
 }
 
 .lh-root button.lh-nib-action:disabled {
@@ -952,7 +952,7 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  background: var(--nw-paper);
+  background: var(--oak-paper);
 }
 
 .lh-tl-head {
@@ -961,13 +961,13 @@
   align-items: baseline;
   gap: 0.25rem 1rem;
   padding: 0.6rem 1rem;
-  border-bottom: 1px solid var(--nw-rule);
+  border-bottom: 1px solid var(--oak-rule);
   padding: 0.7rem 1.25rem;
 }
 
 
 .lh-tl-hint {
-  color: var(--nw-graphite);
+  color: var(--oak-graphite);
   font-size: 0.8rem;
 }
 
@@ -987,7 +987,7 @@
 .lh-tl-ruler {
   position: relative;
   height: 1.6rem;
-  border-bottom: 1px solid var(--nw-ink);
+  border-bottom: 1px solid var(--oak-ink);
   margin-left: 6rem;
 }
 
@@ -996,7 +996,7 @@
   bottom: 0.25rem;
   transform: translateX(-50%);
   font-size: 0.78rem;
-  color: var(--nw-graphite);
+  color: var(--oak-graphite);
   white-space: nowrap;
 }
 
@@ -1007,18 +1007,18 @@
   bottom: -0.3rem;
   width: 1px;
   height: 0.3rem;
-  background: var(--nw-graphite);
+  background: var(--oak-graphite);
 }
 
 .lh-tl-tick-major {
-  color: var(--nw-ink);
+  color: var(--oak-ink);
 }
 
 .lh-tl-track {
   position: relative;
   height: 4.6rem;
   margin-left: 6rem;
-  border-top: 1px dashed var(--nw-rule);
+  border-top: 1px dashed var(--oak-rule);
 }
 
 .lh-tl-track:first-of-type {
@@ -1031,7 +1031,7 @@
   top: 0.5rem;
   width: 5.5rem;
   font-size: 0.82rem;
-  color: var(--nw-graphite);
+  color: var(--oak-graphite);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1062,35 +1062,35 @@
   top: -1.35rem;
   width: 1px;
   height: 1.3rem;
-  background: var(--nw-ink);
+  background: var(--oak-ink);
 }
 
 .lh-tl-tag {
   display: inline-block;
   padding: 0.15rem 0.5rem;
-  font-family: var(--nw-font-body);
+  font-family: var(--oak-font-body);
   font-size: 0.85rem;
   line-height: 1.3;
   white-space: nowrap;
-  color: var(--nw-ink);
-  background: var(--nw-paper);
-  border: 1px solid var(--nw-ink);
-  border-radius: var(--nw-card-radius);
+  color: var(--oak-ink);
+  background: var(--oak-paper);
+  border: 1px solid var(--oak-ink);
+  border-radius: var(--oak-card-radius);
 }
 
 .lh-tl-pin:hover .lh-tl-tag,
 .lh-tl-pin:focus-visible .lh-tl-tag {
-  background: var(--nw-ink);
-  color: var(--nw-paper);
+  background: var(--oak-ink);
+  color: var(--oak-paper);
 }
 
 .lh-tl-pin-event .lh-tl-tag {
   border-style: dashed;
-  color: var(--nw-graphite);
+  color: var(--oak-graphite);
 }
 
 .lh-tl-pin-event::before {
-  background: var(--nw-graphite);
+  background: var(--oak-graphite);
 }
 
 .lh-tl-range {
@@ -1098,8 +1098,8 @@
   left: 0;
   top: -1.45rem;
   height: 0.3rem;
-  background: var(--nw-paper-deep);
-  border: 1px solid var(--nw-ink);
+  background: var(--oak-paper-deep);
+  border: 1px solid var(--oak-ink);
   border-radius: 2px;
 }
 
@@ -1111,7 +1111,7 @@
 
 .lh-tl-track-written {
   height: 2.4rem;
-  border-top: 1px solid var(--nw-rule);
+  border-top: 1px solid var(--oak-rule);
 }
 
 .lh-tl-dot {
@@ -1120,14 +1120,14 @@
   width: 0.45rem;
   height: 0.45rem;
   border-radius: 50%;
-  background: var(--nw-graphite);
+  background: var(--oak-graphite);
   transform: translateX(-50%);
   cursor: pointer;
 }
 
 .lh-tl-empty {
   padding: 2rem 0 1rem 6rem;
-  color: var(--nw-graphite);
+  color: var(--oak-graphite);
 }
 
 .lh-tl-tray {
@@ -1136,8 +1136,8 @@
   align-items: center;
   gap: 0.35rem;
   padding: 0.5rem 1rem;
-  border-top: 1px solid var(--nw-rule);
-  background: var(--nw-paper-deep);
+  border-top: 1px solid var(--oak-rule);
+  background: var(--oak-paper-deep);
 }
 
 .lh-tl-tray:empty {
@@ -1146,7 +1146,7 @@
 
 .lh-tl-tray-label {
   font-size: 0.8rem;
-  color: var(--nw-graphite);
+  color: var(--oak-graphite);
   margin-right: 0.3rem;
 }
 
@@ -1168,7 +1168,7 @@
   gap: 0.35rem;
   margin-left: auto;
   font-size: 0.8rem;
-  color: var(--nw-graphite);
+  color: var(--oak-graphite);
 }
 
 .lh-tl-pin-static {
@@ -1195,15 +1195,15 @@
 
 .lh-th-head {
   font-size: 0.9rem;
-  color: var(--nw-graphite);
+  color: var(--oak-graphite);
   padding-bottom: 0.4rem;
-  border-bottom: 1px solid var(--nw-rule);
+  border-bottom: 1px solid var(--oak-rule);
   white-space: nowrap;
 }
 
 .lh-th-ord {
   font-size: 0.85rem;
-  color: var(--nw-graphite);
+  color: var(--oak-graphite);
   align-self: center;
   font-variant-numeric: tabular-nums;
 }
@@ -1221,7 +1221,7 @@
   top: -0.9rem;
   bottom: -0.9rem;
   width: 3px;
-  background: color-mix(in srgb, var(--lane, var(--nw-rule)) 35%, var(--nw-paper));
+  background: color-mix(in srgb, var(--lane, var(--oak-rule)) 35%, var(--oak-paper));
 }
 
 .lh-th-lane-first::before {
@@ -1233,7 +1233,7 @@
 }
 
 .lh-th-lane-over {
-  outline: 1px dashed var(--nw-ink);
+  outline: 1px dashed var(--oak-ink);
   outline-offset: -1px;
 }
 
@@ -1243,24 +1243,24 @@
   inset: 0;
   display: grid;
   place-items: center;
-  color: var(--nw-graphite);
+  color: var(--oak-graphite);
   font-size: 0.85rem;
 }
 
 .lh-card {
   position: relative;
   padding: 0.7rem 0.9rem 0.75rem;
-  background: var(--nw-card);
-  border: 1px solid var(--nw-rule);
-  border-left: 3px solid var(--nw-rule);
-  box-shadow: 0 1px 0 var(--nw-rule);
+  background: var(--oak-card);
+  border: 1px solid var(--oak-rule);
+  border-left: 3px solid var(--oak-rule);
+  box-shadow: 0 1px 0 var(--oak-rule);
   cursor: pointer;
   outline: none;
 }
 
 .lh-card:hover,
 .lh-card:focus-visible {
-  border-color: var(--nw-ink);
+  border-color: var(--oak-ink);
   border-left-width: 3px;
 }
 
@@ -1274,7 +1274,7 @@
 }
 
 .lh-card-s {
-  color: var(--nw-graphite);
+  color: var(--oak-graphite);
   font-size: 0.9rem;
   line-height: 1.4;
 }
@@ -1301,9 +1301,9 @@
   line-height: 1.2rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--nw-graphite);
-  background: var(--nw-paper-deep);
-  border: 1px solid var(--nw-rule);
+  color: var(--oak-graphite);
+  background: var(--oak-paper-deep);
+  border: 1px solid var(--oak-rule);
   border-radius: 2px;
 }
 
@@ -1359,20 +1359,20 @@
   top: -1.35rem;
   width: 1px;
   height: 1.3rem;
-  background: var(--nw-graphite);
+  background: var(--oak-graphite);
 }
 
 .lh-tl-fold .lh-tl-tag {
-  color: var(--nw-graphite);
-  background: var(--nw-paper-deep);
-  border-color: var(--nw-graphite);
+  color: var(--oak-graphite);
+  background: var(--oak-paper-deep);
+  border-color: var(--oak-graphite);
   font-variant-numeric: tabular-nums;
 }
 
 .lh-tl-fold:hover .lh-tl-tag,
 .lh-tl-fold:focus-visible .lh-tl-tag {
-  background: var(--nw-ink);
-  color: var(--nw-paper);
+  background: var(--oak-ink);
+  color: var(--oak-paper);
 }
 
 .lh-tl-track {
@@ -1385,7 +1385,7 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  background: var(--nw-paper);
+  background: var(--oak-paper);
   font-size: 0.86rem;
 }
 
@@ -1395,17 +1395,17 @@
   justify-content: space-between;
   gap: 0.5rem;
   padding: 0.6rem 0.8rem 0.5rem;
-  border-bottom: 1px solid var(--nw-rule);
+  border-bottom: 1px solid var(--oak-rule);
 }
 
 .lh-binder-title {
-  font-family: var(--nw-font-body);
+  font-family: var(--oak-font-body);
   font-size: 1.05rem;
   font-weight: 600;
 }
 
 .lh-binder-total {
-  color: var(--nw-graphite);
+  color: var(--oak-graphite);
   font-size: 0.78rem;
   font-variant-numeric: tabular-nums;
 }
@@ -1418,7 +1418,7 @@
 
 .lh-binder-empty {
   padding: 0.8rem;
-  color: var(--nw-graphite);
+  color: var(--oak-graphite);
 }
 
 .lh-binder-row {
@@ -1434,18 +1434,18 @@
 
 .lh-binder-row:hover,
 .lh-binder-row:focus-visible {
-  background: var(--nw-paper-deep);
+  background: var(--oak-paper-deep);
 }
 
 .lh-binder-active {
-  background: var(--nw-paper-deep);
-  box-shadow: inset 2px 0 0 var(--nw-ink);
+  background: var(--oak-paper-deep);
+  box-shadow: inset 2px 0 0 var(--oak-ink);
 }
 
 .lh-binder-twisty {
   width: 0.9rem;
   flex: none;
-  color: var(--nw-graphite);
+  color: var(--oak-graphite);
   font-size: 0.7rem;
   text-align: center;
 }
@@ -1470,17 +1470,17 @@
 }
 
 .lh-binder-words {
-  color: var(--nw-graphite);
+  color: var(--oak-graphite);
   font-size: 0.75rem;
   font-variant-numeric: tabular-nums;
 }
 
 .lh-binder-status {
   padding: 0 0.35rem;
-  border: 1px solid var(--nw-rule);
+  border: 1px solid var(--oak-rule);
   border-radius: 999px;
   font-size: 0.66rem;
-  color: var(--nw-graphite);
+  color: var(--oak-graphite);
   white-space: nowrap;
 }
 
@@ -1488,18 +1488,18 @@
 .lh-inspector {
   height: 100%;
   overflow: auto;
-  background: var(--nw-paper);
+  background: var(--oak-paper);
   font-size: 0.86rem;
   padding-bottom: 1rem;
 }
 
 .lh-inspector-head {
   padding: 0.6rem 0.8rem 0.5rem;
-  border-bottom: 1px solid var(--nw-rule);
+  border-bottom: 1px solid var(--oak-rule);
 }
 
 .lh-inspector-title {
-  font-family: var(--nw-font-body);
+  font-family: var(--oak-font-body);
   font-size: 1.05rem;
   font-weight: 600;
 }
@@ -1513,10 +1513,10 @@
 
 .lh-inspector-fact {
   padding: 0 0.4rem;
-  border: 1px solid var(--nw-rule);
+  border: 1px solid var(--oak-rule);
   border-radius: 999px;
   font-size: 0.7rem;
-  color: var(--nw-graphite);
+  color: var(--oak-graphite);
   white-space: nowrap;
 }
 
@@ -1530,7 +1530,7 @@
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--nw-graphite);
+  color: var(--oak-graphite);
 }
 
 .lh-inspector-text {
@@ -1557,19 +1557,19 @@
 
 .lh-inspector-snapshot:hover,
 .lh-inspector-snapshot:focus-visible {
-  background: var(--nw-paper-deep);
+  background: var(--oak-paper-deep);
 }
 
 .lh-inspector-when {
   font-size: 0.72rem;
-  color: var(--nw-graphite);
+  color: var(--oak-graphite);
   font-variant-numeric: tabular-nums;
 }
 
 .lh-inspector-none,
 .lh-inspector-empty {
   margin: 0;
-  color: var(--nw-graphite);
+  color: var(--oak-graphite);
 }
 
 .lh-inspector-empty {
@@ -1584,7 +1584,7 @@
   border-radius: 3px;
   background: none;
   box-shadow: none;
-  color: var(--nw-graphite);
+  color: var(--oak-graphite);
   font-size: 1rem;
   line-height: 1.1;
   cursor: pointer;
@@ -1592,8 +1592,8 @@
 
 .lh-root button.lh-binder-add:hover,
 .lh-root button.lh-binder-add:focus-visible {
-  color: var(--nw-ink);
-  background: var(--nw-paper-deep);
+  color: var(--oak-ink);
+  background: var(--oak-paper-deep);
 }
 
 /* a row's + waits until the row is pointed at or focused; the header's always shows */
@@ -1617,7 +1617,7 @@
   left: 0.6rem;
   right: 0.6rem;
   height: 2px;
-  background: var(--nw-ink);
+  background: var(--oak-ink);
 }
 
 .lh-binder-drop-above::before {
@@ -1636,11 +1636,11 @@
   min-width: 0;
   max-width: 100%;
   padding: 0.15rem 0.4rem;
-  font-family: var(--nw-font-body);
+  font-family: var(--oak-font-body);
   font-size: 1rem;
   font-weight: 600;
-  color: var(--nw-ink);
-  background: var(--nw-paper);
+  color: var(--oak-ink);
+  background: var(--oak-paper);
   border: 1px solid transparent;
   border-radius: 3px;
   box-shadow: none;
@@ -1648,7 +1648,7 @@
 }
 
 .lh-root select.lh-project-picker:hover {
-  border-color: var(--nw-rule);
+  border-color: var(--oak-rule);
 }
 
 .lh-root select.lh-project-picker[hidden] {

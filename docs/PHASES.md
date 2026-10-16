@@ -1,5 +1,5 @@
 ---
-repo: nibwrite
+repo: oakfall
 schema: phases/v1
 current_phase: L1
 updated: 2026-09-16
@@ -31,7 +31,7 @@ phases:
         title: Brand and site
         status: done
         deliverables:
-          - { id: L0.3-d1, done: true, desc: "nibwrite-site: mark, Nib, palette, type, voice; landing page with a panel per module, live relief map, place cards, cast panel" }
+          - { id: L0.3-d1, done: true, desc: "oakfall-site: mark, Nib, palette, type, voice; landing page with a panel per module, live relief map, place cards, cast panel" }
         acceptance:
           - { id: L0.3-a1, met: true, check: "site builds on GitHub Pages; each panel screenshotted in a browser", method: manual }
 
@@ -40,7 +40,7 @@ phases:
     program: spec-and-importer
     status: in_progress
     depends_on: []
-    note: "Delivered in the scrivener-to-obsidian repo; see its docs/PHASES.md (phases I0 to I8). Listed here because v0.1 of Nibwrite is not shippable without it."
+    note: "Delivered in the scrivener-to-obsidian repo; see its docs/PHASES.md (phases I0 to I8). Listed here because v0.1 of Oakfall is not shippable without it."
     subphases:
       - id: L1.1
         title: scriv2obsidian v0.1 released
@@ -219,7 +219,7 @@ phases:
         status: in_progress
         deliverables:
           - { id: N0.1-d1, done: true, desc: "right-sidebar view with transcript, suggested questions from the project, question box; answers for last seen, set at, who is in, unused places and characters, length, on the map; every answer cites and opens its scenes; off by default", note: "2026-09-16: src/modules/nib; tests/nib.test.ts covers every answer kind and the one joke" }
-          - { id: N0.1-d2, done: true, desc: "the character: a corner nib on every Nibwrite view that idles, badges when it has noticed something, speaks it once in a bubble with a follow-up and a question box, and hands the conversation to the sidebar; nudges computed from the files for the view on screen", note: "2026-09-16: src/modules/nib/nudges.ts, tests/nudges.test.ts; modelled on what worked in the Office Assistant and not on what did not: strong signals only, said once, dismissible, never covering the work" }
+          - { id: N0.1-d2, done: true, desc: "the character: a corner nib on every Oakfall view that idles, badges when it has noticed something, speaks it once in a bubble with a follow-up and a question box, and hands the conversation to the sidebar; nudges computed from the files for the view on screen", note: "2026-09-16: src/modules/nib/nudges.ts, tests/nudges.test.ts; modelled on what worked in the Office Assistant and not on what did not: strong signals only, said once, dismissible, never covering the work" }
         acceptance:
           - { id: N0.1-a1, met: false, check: "in the test vault, turn Nib on, ask where Mara was last seen and where Stillwater is on the map; both answers cite the right notes and open them", method: manual }
   - id: L8

@@ -1,8 +1,8 @@
-# Nibwrite
+# Oakfall
 
 **The writing studio for Obsidian.** Binder, snapshots with live compare, inspector, corkboard, timeline, research, compile. One plugin, one settings page, every module switchable, and everything stored as Markdown, frontmatter, and git commits you can read with nothing installed.
 
-> Status: pre-release. The [importer](https://github.com/nibwrite/scrivener-to-obsidian) is feature complete for v0.1. The plugin core and the first module, Map, build and pass their tests; nothing is published yet. Watch the repo or open a discussion if you write long-form in Obsidian and want in early.
+> Status: pre-release. The [importer](https://github.com/oakfall/scrivener-to-obsidian) is feature complete for v0.1. The plugin core and the first module, Map, build and pass their tests; nothing is published yet. Watch the repo or open a discussion if you write long-form in Obsidian and want in early.
 
 ## What changes when you install it
 
@@ -16,7 +16,7 @@ flowchart LR
         b4["Kanban + Canvas + Timeline plugins, each with its own fields"]
         b5["Longform compile to Markdown"]
     end
-    subgraph after["Obsidian with Nibwrite"]
+    subgraph after["Obsidian with Oakfall"]
         direction TB
         a1["Binder: ordered manuscript, drag to reorder"]
         a2["Inspector: synopsis, label, status, notes, attachments"]
@@ -33,11 +33,11 @@ flowchart LR
 
 Uninstall it and every one of those is still there in plain form: the order is in the file names, the metadata is in frontmatter, the snapshots are plain copies in a folder or ordinary git commits, your choice.
 
-Nibwrite does not sync. iCloud, Dropbox, Obsidian Sync, Syncthing, or a git remote all keep working, and snapshot history travels with the vault to every device. Details in [Sync and history](docs/sync-and-history.md).
+Oakfall does not sync. iCloud, Dropbox, Obsidian Sync, Syncthing, or a git remote all keep working, and snapshot history travels with the vault to every device. Details in [Sync and history](docs/sync-and-history.md).
 
 ## Where things are going
 
-[Programs](docs/programs.md) names the product lines and what in each is open or paid. [Hosts](docs/hosts.md) draws the line between Nibwrite and the program it runs inside. [The roadmap](ROADMAP.md) tells the story by release. [The ledger](docs/PHASES.md) is the delivery state.
+[Programs](docs/programs.md) names the product lines and what in each is open or paid. [Hosts](docs/hosts.md) draws the line between Oakfall and the program it runs inside. [The roadmap](ROADMAP.md) tells the story by release. [The ledger](docs/PHASES.md) is the delivery state.
 
 ## A writing day
 
@@ -112,8 +112,8 @@ Nib is the assistant: it lives in the margin, knows the manuscript through the s
 
 ## Repositories
 
-- **[nibwrite](https://github.com/nibwrite/nibwrite)**, this repo: the spec, the design, and the plugin.
-- **[scrivener-to-obsidian](https://github.com/nibwrite/scrivener-to-obsidian)**: the importer that turns a `.scriv` package into a spec-compliant vault and replays every Scrivener snapshot as git history.
+- **[oakfall](https://github.com/oakfall/oakfall)**, this repo: the spec, the design, and the plugin.
+- **[scrivener-to-obsidian](https://github.com/oakfall/scrivener-to-obsidian)**: the importer that turns a `.scriv` package into a spec-compliant vault and replays every Scrivener snapshot as git history.
 
 ## Read more
 
@@ -122,10 +122,10 @@ Nib is the assistant: it lives in the margin, knows the manuscript through the s
 - [Vault spec](docs/spec.md): the frontmatter fields, layout, snapshot files, and commit format everything agrees on.
 - [Sync and history](docs/sync-and-history.md): how it behaves under iCloud, Dropbox, Obsidian Sync, Syncthing, and git.
 - [Themes and templates](docs/theming.md): the open formats for building your own look and your own project starters.
-- Site: https://nibwrite.github.io/nibwrite-site/ (source in [nibwrite-site](https://github.com/nibwrite/nibwrite-site), with the brand kit)
+- Site: https://oakfall.github.io/oakfall-site/ (source in [oakfall-site](https://github.com/oakfall/oakfall-site), with the brand kit)
 
 ## License and affiliation
 
-Nibwrite is an independent project. It is not affiliated with or endorsed by Literature & Latte, the makers of Scrivener, or by Obsidian; those names are trademarks of their respective owners.
+Oakfall is an independent project. It is not affiliated with or endorsed by Literature & Latte, the makers of Scrivener, or by Obsidian; those names are trademarks of their respective owners.
 
-Apache License 2.0 for everything in this repository, copyright 0xSpectra LLC and the Nibwrite Authors; see [NOTICE](NOTICE). The names and marks are not part of the licence; see [TRADEMARKS.md](TRADEMARKS.md). Nib, compile presets, and relief maps are paid and live outside it; nothing that guards your data ever will be.
+Apache License 2.0 for everything in this repository, copyright 0xSpectra LLC and the Oakfall Authors; see [NOTICE](NOTICE). The names and marks are not part of the licence; see [TRADEMARKS.md](TRADEMARKS.md). Nib, compile presets, and relief maps are paid and live outside it; nothing that guards your data ever will be.

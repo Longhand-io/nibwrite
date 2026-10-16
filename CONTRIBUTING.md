@@ -1,4 +1,4 @@
-# Contributing to Nibwrite
+# Contributing to Oakfall
 
 Thank you. This is a small project with one maintainer, so the rules below exist to keep review fast, not to slow you down.
 
@@ -20,7 +20,7 @@ The gate is strict type-check, the unit tests (Node's own runner, no test framew
 
 Modules never import `obsidian`; they are written against the host interface in `src/host/host.ts`, which `src/host/obsidian/` implements and `src/host/memory.ts` fakes for tests. Keep it that way: a module that reaches for the Obsidian API directly will not be merged.
 
-To try a build in a vault, copy `main.js`, `manifest.json`, and `styles.css` into `<vault>/.obsidian/plugins/nibwrite/` and enable Nibwrite under Community plugins.
+To try a build in a vault, copy `main.js`, `manifest.json`, and `styles.css` into `<vault>/.obsidian/plugins/oakfall/` and enable Oakfall under Community plugins.
 
 For something to look at, `node hack/demo-vault.mjs "<vault>/Harrowmere"` writes a synthetic project with enough metadata to exercise every module: dated and labelled scenes in three parts, characters and places with aliases, events, and a map with pins and drawn shapes. Nothing in it comes from a real manuscript.
 
@@ -32,7 +32,7 @@ Every commit must carry a `Signed-off-by:` line matching its author, which certi
 git commit -s
 ```
 
-That is the whole contributor agreement. There is no CLA, and no real-name requirement: sign off with a name you use consistently and an email that reaches you. Contributions are licensed under Apache-2.0 and the copyright stays with you; the NOTICE file credits the Nibwrite Authors collectively.
+That is the whole contributor agreement. There is no CLA, and no real-name requirement: sign off with a name you use consistently and an email that reaches you. Contributions are licensed under Apache-2.0 and the copyright stays with you; the NOTICE file credits the Oakfall Authors collectively.
 
 ## Commit messages
 

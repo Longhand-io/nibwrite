@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
+// Copyright 2026 0xSpectra LLC and the Oakfall Authors.
 
 import assert from "node:assert/strict";
 import { test } from "node:test";
@@ -12,7 +12,7 @@ import { suggest } from "../src/modules/nib/view.js";
 
 function vault(): MemoryHost {
   return new MemoryHost({
-    "Novel/_Project.md": '---\nnibwrite: 1\ntitle: "Harrowmere"\n---\n',
+    "Novel/_Project.md": '---\noakfall: 1\ntitle: "Harrowmere"\n---\n',
     "Novel/Manuscript/01 Part One/01 The Letter.md":
       '---\nid: "C1"\ntype: "text"\ntitle: "The Letter"\n---\nMara found the letter. She read it twice at [[Stillwater]].\n',
     "Novel/Manuscript/01 Part One/02 The Tin.md": '---\nid: "C2"\ntype: "text"\ntitle: "The Tin"\n---\nShe paid for the crossing. [[Tom]] said nothing.\n',
@@ -101,7 +101,7 @@ test("module is off by default and registers a right-hand view and the Ask Nib c
   const core = createCore(host);
   assert.equal(nibModule.defaultEnabled, false);
   await nibModule.register(core);
-  assert.equal(host.views.get("nibwrite-nib")?.placement, "right");
+  assert.equal(host.views.get("oakfall-nib")?.placement, "right");
   assert.ok(host.commands.has("nib-ask"));
   assert.equal(host.overlays.length, 1);
   assert.equal(host.overlays[0]?.id, "nib");
@@ -113,9 +113,9 @@ test("a question from the corner opens the sidebar with the context, carrying wh
   const host = vault();
   const core = createCore(host);
   const session = new NibSession();
-  await session.askInSidebar(core, "nibwrite-nib", "Which places have no scene?", "Novel/Maps/Harrowmere.md", "Harrow Wood is on this map but no scene is set there yet.");
+  await session.askInSidebar(core, "oakfall-nib", "Which places have no scene?", "Novel/Maps/Harrowmere.md", "Harrow Wood is on this map but no scene is set there yet.");
   assert.deepEqual(session.pending, { question: "Which places have no scene?", preface: "Harrow Wood is on this map but no scene is set there yet." });
-  assert.deepEqual(host.openedViews, [{ type: "nibwrite-nib", state: { path: "Novel/Maps/Harrowmere.md" } }]);
+  assert.deepEqual(host.openedViews, [{ type: "oakfall-nib", state: { path: "Novel/Maps/Harrowmere.md" } }]);
 });
 
 test("scope follows the active note: a project, the whole vault, or nothing open", async () => {

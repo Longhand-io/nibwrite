@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 0xSpectra LLC and the Nibwrite Authors.
+// Copyright 2026 0xSpectra LLC and the Oakfall Authors.
 
 // The drawing layer: an SVG over the map that renders shapes in the paper-and-ink style and
 // hosts the tools. Coordinates on the note are fractions; here they are user units in a
@@ -434,7 +434,7 @@ export function createDrawLayer(stage: HTMLElement, opts: DrawLayerOptions): Dra
 // ---- the paper-and-ink palette ----
 
 export function colorVar(color: ShapeColor): string {
-  return `var(--nw-color-${color})`;
+  return `var(--oak-color-${color})`;
 }
 
 function paint(style: ShapeStyle, closed: boolean, color: ShapeColor | null = null): { [attr: string]: string | number } {
@@ -457,7 +457,7 @@ function basePaint(style: ShapeStyle, closed: boolean): { [attr: string]: string
     case "river":
       return { fill: closed ? "transparent" : "none", stroke: "#9DB0BF", "stroke-width": 2.6, "stroke-linecap": "round", "stroke-linejoin": "round" };
     case "route":
-      return { fill: closed ? "transparent" : "none", stroke: "var(--nw-ink)", "stroke-width": 1.6, "stroke-dasharray": "3 4", "stroke-linecap": "round" };
+      return { fill: closed ? "transparent" : "none", stroke: "var(--oak-ink)", "stroke-width": 1.6, "stroke-dasharray": "3 4", "stroke-linecap": "round" };
     case "outline":
     default:
       return { fill: closed ? "transparent" : "none", stroke: "#8F978B", "stroke-width": 1.2, "stroke-linejoin": "round" };
@@ -597,7 +597,7 @@ function arrowHead(pts: Point[], color: ShapeColor | null = null): SVGElement {
   return el("path", {
     d: `M${p1[0]} ${p1[1]} L${b[0]} ${b[1]} L${p2[0]} ${p2[1]}`,
     fill: "none",
-    stroke: color ? colorVar(color) : "var(--nw-ink)",
+    stroke: color ? colorVar(color) : "var(--oak-ink)",
     "stroke-width": 1.6,
     "stroke-linecap": "round",
   });
