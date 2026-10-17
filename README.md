@@ -122,7 +122,7 @@ Gall is the assistant: it lives in the margin, knows the manuscript through the 
 - [Vault spec](docs/spec.md): the frontmatter fields, layout, snapshot files, and commit format everything agrees on.
 - [Sync and history](docs/sync-and-history.md): how it behaves under iCloud, Dropbox, Obsidian Sync, Syncthing, and git.
 - [Themes and templates](docs/theming.md): the open formats for building your own look and your own project starters.
-- Site: https://oakfall.github.io/oakfall-site/ (source in [oakfall-site](https://github.com/oakfall/oakfall-site), with the brand kit)
+- Site: https://oakfall.app/ (source in [oakfall-site](https://github.com/oakfall/oakfall-site), with the brand kit)
 
 ## License and affiliation
 
